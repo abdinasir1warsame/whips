@@ -56,17 +56,17 @@ section.navigation-bar {
 }
 
 .navigation-bar .second-half {
-  width: 15%;
-  display: grid;
-  place-items: center;
+  width: 25%;
+  display: flex;
+  flex-direction: row;
 }
 
 .navigation-bar .second-half a:nth-child(1) {
   text-decoration: none;
-  width: 100%;
+  width: 50%;
 }
 
-.navigation-bar > .second-half .book-now-btn {
+.navigation-bar > .second-half .register-now-btn {
   width: 100%;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
@@ -93,6 +93,8 @@ section.navigation-bar {
   color: white;
   text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
   color: white;
+
+  cursor: pointer;
 }
 
 .navigation-boxes .car-type {

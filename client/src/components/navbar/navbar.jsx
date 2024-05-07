@@ -54,9 +54,9 @@ const Navbar = () => {
             </ul>
           </div>
         </li>
-        <li><a href=""><label>our offers</label></a></li>
+        {/* <li><a href=""><label>our offers</label></a></li> */}
         <li><a href=""><label>rental policy</label></a></li>
-        <li><a href=""><label>blog</label></a></li>
+        {/* <li><a href=""><label>blog</label></a></li> */}
         <li><a href=""><label>about us</label></a></li>
         <li><a href=""><label>contact us</label></a></li>
       </ul>  
@@ -127,7 +127,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      <div className="third-li-container navigation-boxes"><a href="">
+      {/* <div className="third-li-container navigation-boxes"><a href="">
           <li>Our Offers</li>
         </a> 
       </div>
@@ -138,7 +138,7 @@ const Navbar = () => {
       <div className="fifth-li-container navigation-boxes"><a href="">
           <li>Blog</li>
         </a> 
-      </div>
+      </div> */}
       <div className="sixth-li-container navigation-boxes"><a href="">
           <li>About Us</li>
         </a> 
@@ -150,11 +150,14 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="second-half">
-    <a href="">
-      <div className="book-now-btn">
-        <span>BOOK NOW</span>
+    
+      <div className="register-now-btn">
+        <span>LOGIN</span>
       </div>
-    </a>
+      <div className="register-now-btn">
+        <span>SIGN UP</span>
+      </div>
+    
   </div>
 </section>
 </div>
