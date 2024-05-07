@@ -1,0 +1,262 @@
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Wrap items onto new lines */
+  gap: 70px;
+  padding: 30px 0;
+  background-color: white;
+  margin-top: 150px;
+}
+
+.container > * {
+  flex: 0 0 calc(25% - 70px); /* 25% width minus the gap */
+  max-width: calc(25% - 70px); /* Set maximum width */
+}
+@media (max-width: 767px) {
+  .container > * {
+    flex-basis: 100%; /* Set to full width for mobile */
+    max-width: 100%;
+    padding: 10px;
+  }
+}
+.device {
+  width: 375px;
+  height: 100%;
+  border-radius: 30px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);
+}
+
+.header {
+  width: 100%;
+  height: 350px;
+  position: relative;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #3d6a9b 0%,
+      /* Darker Blue */ #295683 15%,
+      /* Dark Blue */ #1a3b58 30%,
+      /* Even Darker Blue */ #1e4768 45%,
+      /* Dark Blue */ #2a4e76 60%,
+      /* Blue */ #1d3e5d 75% /* Dark Blue */
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      /* White */ #b3d7ff 15%,
+      /* Light Blue */ #6691bb 30%,
+      /* Slightly darker */ #4c7da3 45%,
+      /* Darker */ #a7bed4 60%,
+      /* Main Color */ #c7ccd2 75% /* Main Color */
+    ),
+    linear-gradient(to right, #cccccc, #b3d7ff);
+
+  background-size: contain;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);
+  border-radius: 30px;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../assets/car-images/bmw-small.png') no-repeat center;
+  background-size: contain;
+  border-radius: 30px;
+}
+
+.info {
+  position: absolute;
+  width: calc(100% - 60px);
+  left: 30px;
+  bottom: -40px;
+  background-color: #6b6c6ed2;
+  backdrop-filter: blur(6px);
+  border-radius: 30px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-row:first-child {
+  margin-bottom: 6px;
+}
+
+.info-row h1 {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  color: #fff;
+}
+
+.info-row .price {
+  color: #fff;
+  margin-right: 3px;
+}
+
+.rating {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rating small,
+.rating .mark {
+  color: #eee;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.rating .mark {
+  padding: 0 6px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+}
+
+.stars {
+  display: flex;
+  margin: 0 8px;
+}
+
+.star {
+  width: 12px;
+  height: 12px;
+  background: url('../../assets/car-images/audi.png') no-repeat center;
+  background-size: 8px;
+}
+
+.period {
+  color: white;
+  font-size: 10px;
+  font-weight: 300;
+}
+
+.data {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50px 30px 100px;
+  max-height: 310px;
+  overflow-y: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.gallery {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pic {
+  flex: 1;
+  height: 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-right: 15px;
+  border-radius: 10px;
+}
+
+.pic:last-child {
+  margin-right: 0;
+}
+
+.photo1 {
+  background-image: url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+}
+
+.photo2 {
+  background-image: url(https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
+}
+
+.photo3 {
+  background-image: url(https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80);
+}
+
+.photo4 {
+  background-image: url(https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80);
+}
+
+.desc {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  font-weight: 300;
+  color: #aaa;
+}
+
+.confirmation {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: linear-gradient(to top, #fff 65%, transparent);
+  padding: 50px 30px 30px;
+  box-sizing: border-box;
+}
+
+.confirmation button {
+  border: 0;
+  background: #f0f4fc;
+  padding: 12px 30px;
+  border-radius: 15px;
+  flex: 1;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+}
+
+.confirmation button:hover {
+  opacity: 0.7;
+}
+
+.confirmation button:first-child {
+  margin-right: 15px;
+}
+
+.confirmation button.main {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #3d6a9b 0%,
+      /* Darker Blue */ #295683 15%,
+      /* Dark Blue */ #1a3b58 30%,
+      /* Even Darker Blue */ #1e4768 45%,
+      /* Dark Blue */ #2a4e76 60%,
+      /* Blue */ #1d3e5d 75% /* Dark Blue */
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      /* White */ #b3d7ff 15%,
+      /* Light Blue */ #6691bb 30%,
+      /* Slightly darker */ #4c7da3 45%,
+      /* Darker */ #a7bed4 60%,
+      /* Main Color */ #c7ccd2 75% /* Main Color */
+    );
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);
+  color: #fff;
+}
