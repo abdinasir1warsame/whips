@@ -1,23 +1,40 @@
 
 
 import './App.css'
-import Cars from './components/cars/cars'
-import Hero from './components/hero/hero'
-import Login from './components/login-signup/login'
-import Signup from './components/login-signup/signup'
-import Navbar from './components/navbar/navbar'
+import {Route, Routes} from "react-router-dom"
+
+import IndexPage from './pages/indexPage'
+import LoginPage from './pages/loginPage'
+import SignUpPage from './pages/signupPage'
+import Layout from './layout'
+import CarsPage from './pages/carsPage'
+import axios from 'axios'
+
+axios.defaults.baseURL = "http://localhost:4000";
+axios.defaults.withCredentials = true;
 
 function App() {
 
 
   return (
-    <div>    <Navbar/>
-    <Hero/>
-    <Cars/>
-    <Login/>
-    <Signup/>
+    <Routes>
+      <Route path='/' element={<Layout/>}>
+   
+      <Route index element={<IndexPage/>}/>
+      <Route path="/login" element={<LoginPage/>}/>
+      <Route path="/signup" element={<SignUpPage/>}/>
+      <Route path="/cars" element={<CarsPage/>}/>
+      </Route>
+    </Routes>
+    // <div>    <Navbar/>
+    // <Hero/>
+    // <Cars/>
+    // <Login/>
+    // <Signup/>
+    // <Categories/>
+    // <AboutUs/>
     
-    </div>
+    // </div>
 
   )
 }

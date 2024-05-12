@@ -6,7 +6,20 @@ section.navigation-bar {
   /*   border: 3px dashed; */
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(132deg, #6b6c6e 2%, #2c3e50 100%);
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      /* Light Admiral Blue */ #102331 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #1d3d55 8%,
+      /* Light Admiral Blue */ #526a80 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
   z-index: 1;
   text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
   color: white;
@@ -68,24 +81,7 @@ section.navigation-bar {
 
 .navigation-bar > .second-half .register-now-btn {
   width: 100%;
-  background: radial-gradient(
-      ellipse farthest-corner at right bottom,
-      #2c3e50 0%,
-      /* Main Color */ #34495e 20%,
-      /* Slightly darker */ #2c3e50 40%,
-      /* Main Color */ #2c3e50 60%,
-      /* Main Color */ #34495e 80%,
-      /* Slightly darker */ #2c3e50 100% /* Main Color */
-    ),
-    radial-gradient(
-      ellipse farthest-corner at left top,
-      #2c3e50 0%,
-      /* Main Color */ #34495e 20%,
-      /* Slightly darker */ #2c3e50 40%,
-      /* Main Color */ #2c3e50 60%,
-      /* Main Color */ #34495e 80%,
-      /* Slightly darker */ #2c3e50 100% /* Main Color */
-    );
+
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   text-align: center;
@@ -199,8 +195,7 @@ section.navigation-bar {
       rgba(23, 18, 0, 1) 0%,
       rgba(0, 212, 255, 0) 58%
     ),
-    url('https://rbcarrental.com/wp-content/uploads/2022/06/3_RP-Huracan-Evo-88.jpg')
-      no-repeat center;
+    url('../../assets/car-images/hatch.jpg') no-repeat center;
   background-size: cover;
   position: relative;
   transition-delay: 750ms;

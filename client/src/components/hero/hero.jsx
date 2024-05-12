@@ -14,7 +14,7 @@ import Toyota from "../../assets/car-images/toyota.png"
 
 
 
-import Vw from "../../assets/car-images/vw-n.png"
+
 import "./hero.css";
 
 const Hero = () => {
@@ -23,14 +23,12 @@ const Hero = () => {
     
 Jaguar,
 Audi,
-Toyota,
-
-Tesla,
-
-
-
-
-
+Bmw5series,
+Jaguar,
+Audi,
+Bmw5series,
+Jaguar,
+Audi,
 Bmw5series,
 
 
@@ -83,6 +81,7 @@ Bmw5series,
             </div>
           </div>
         </div>
+        
       </section>
     </div>
   );

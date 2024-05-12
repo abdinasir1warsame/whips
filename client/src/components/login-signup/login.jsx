@@ -1,8 +1,31 @@
 import React from "react";
+import { useState } from "react";
+import { Link, Navigate } from "react-router-dom";
+import axios from "axios";
 import "./login-signup.css"
 
 
 const Login = () => {
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("")
+  const [redirect,setRedirect] = useState(false)
+
+  async function loginUser (ev) {
+ev.preventDefault();
+try { await axios.post("/login", {email,password});
+alert("login Successful")
+setRedirect(true)
+
+
+} catch (e) {
+  alert("login failed")
+}
+
+  }
+  if (redirect) {
+    return <Navigate to={"/"}/>
+  }
     return (
         <div>
             
@@ -20,13 +43,14 @@ const Login = () => {
               <form className="login">
                 <div className="login__field">
                   <i className="login__icon fas fa-user"></i>
-                  <input type="text" className="login__input" placeholder=" Email" />
+                  <input type="text" className="login__input" placeholder=" Email" value={email} onChange={ev => setEmail(ev.target.value) }/>
                 </div>
                 <div className="login__field">
                   <i className="login__icon fas fa-lock"></i>
-                  <input type="password" className="login__input" placeholder="Password" />
+                  <input type="password" className="login__input" placeholder="Password"  value={password} onChange={ev => setPassword(ev.target.value) } />
                 </div>
-                <button className="button login__submit">
+                <Link to={"/signup"} className="form-question"><p >Dont Have An Account?<br/> Sign Up Here!</p></Link>
+                <button onClick={loginUser} className="button login__submit">
                   <span className="button__text">Log In</span>
                   <i className="button__icon fas fa-chevron-right"></i>
                 </button>        

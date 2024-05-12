@@ -40,23 +40,18 @@ button {
   position: relative;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
-      #3d6a9b 0%,
-      /* Darker Blue */ #295683 15%,
-      /* Dark Blue */ #1a3b58 30%,
-      /* Even Darker Blue */ #1e4768 45%,
-      /* Dark Blue */ #2a4e76 60%,
-      /* Blue */ #1d3e5d 75% /* Dark Blue */
+      #253f54 8%,
+      /* Light Admiral Blue */ #142b3d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      #ffffff 0%,
-      /* White */ #b3d7ff 15%,
-      /* Light Blue */ #6691bb 30%,
-      /* Slightly darker */ #4c7da3 45%,
-      /* Darker */ #a7bed4 60%,
-      /* Main Color */ #c7ccd2 75% /* Main Color */
-    ),
-    linear-gradient(to right, #cccccc, #b3d7ff);
+      #485e72 8%,
+      /* Light Admiral Blue */ #3e5162 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
 
   background-size: contain;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);

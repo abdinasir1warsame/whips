@@ -5,7 +5,21 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(132deg, #6b6c6e 0%, #2c3e50 100%);
+  /* background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    ); */
+  z-index: -4;
   max-height: 100vh;
   position: relative;
   background-attachment: fixed;

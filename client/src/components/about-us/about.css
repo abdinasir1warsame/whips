@@ -1,0 +1,97 @@
+.about-us-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
+}
+
+.about-us {
+  position: relative; /* Added relative positioning to the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 24px #85bbf1;
+  background-color: white;
+  min-width: 90vw;
+  min-height: 90vh;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.about-text {
+  position: absolute; /* Changed to absolute positioning */
+  width: calc(43vw - 25px);
+  height: 82vh; /* 30% of the viewport width minus some padding */
+  left: 8vw; /* Adjusted left position */
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: #fff;
+  padding: 60px;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 5%,
+    80% 100%,
+    0 100%
+  ); /* Updated clip-path for the custom shape */
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #253f54 8%,
+      /* Light Admiral Blue */ #142b3d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #485e72 8%,
+      /* Light Admiral Blue */ #3e5162 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
+
+  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
+  box-shadow: 0px 20px 24px #85bbf1;
+
+  color: white;
+}
+
+.about-text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.about-image {
+  width: calc(65vw - 25px); /* Changed width to take over 70vw */
+  max-width: 90%;
+  height: 70vh;
+  background-image: url('https://images.unsplash.com/photo-1609623279111-449b1dedf639?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxibHVlJTIwc3BvcnRzJTIwY2FyfGVufDB8MHwwfHx8MA%3D%3D');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 10px;
+  margin-left: 200px;
+  z-index: 1;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}

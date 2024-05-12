@@ -5,11 +5,19 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
   gap: 2px;
   align-items: center;
   flex-wrap: wrap;
   transition: all 0.5s linear;
+  min-height: 93vh;
+  background: linear-gradient(
+    70deg,
+    #1d3d55 0%,
+    #1d3d55 50%,
+    white 50%,
+    white 75%
+  );
+  z-index: -3;
 }
 
 .block {
@@ -154,10 +162,10 @@
   border-radius: 50%;
   height: 90%;
   width: 70%;
-  background: #2c3e50;
-  background: radial-gradient(circle, #5a7999 2%, #2c3e50 64%);
 
-  filter: blur(10%);
+  background: white;
+  background: radial-gradient(circle, rgb(71, 90, 129) 2%, #1d3d55 64%);
+
   z-index: -1;
 }
 
@@ -237,6 +245,22 @@
 }
 
 @media screen and (max-width: 768px) {
+  .main-section {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #142b3d 8%,
+        #102331 30%,
+        #142b3d 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #768a9d 8%,
+        #526a80 25%,
+        #1d3d55 62.5%,
+        #1d3d55 100%
+      );
+  }
   .nav .navOpenBtn,
   .nav .navCloseBtn {
     display: block;
@@ -331,11 +355,7 @@
     height: 80%;
     width: 50%;
     background: rgb(33, 104, 255);
-    background: radial-gradient(
-      circle,
-      rgb(46, 58, 82) 2%,
-      rgb(55, 69, 82) 64%
-    );
+    background: radial-gradient(circle, #1d3d55 2%, #1d3d55 64%);
     filter: blur(10%);
     z-index: -1;
   }

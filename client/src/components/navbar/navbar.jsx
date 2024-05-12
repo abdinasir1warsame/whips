@@ -5,6 +5,7 @@ import LandroverLogo from "../../assets/nav-images/landrover-logo.png"
 import MercedesLogo from "../../assets/nav-images/mercedes-logo.png"
 import NissanLogo from "../../assets/nav-images/nissan-logo.png"
 import ToyotaLogo from "../../assets/nav-images/toyota-logo.png"
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -71,10 +72,10 @@ const Navbar = () => {
   <div className="first-half"> 
     <ul className="navigation-list">
       <div className="list-wrapper">
-      <div className="first-li-container navigation-boxes"><a href=""> 
+      <Link to={"/cars"} className="first-li-container navigation-boxes"><a href=""> 
           <li>Our Cars</li>
         </a>
-      </div> 
+      </Link> 
     <div className="car-category-wrapper">
         <a href=""><div className="suv-container category-car-box"><span className="category-title"> 4 x 4 </span></div></a>
       <a href=""><div className="luxury-container category-car-box"><span className="category-title"> LUXURY </span></div></a>
@@ -127,18 +128,7 @@ const Navbar = () => {
           </a>
         </div>
       </div>
-      {/* <div className="third-li-container navigation-boxes"><a href="">
-          <li>Our Offers</li>
-        </a> 
-      </div>
-      <div className="fourth-li-container navigation-boxes"><a href="">
-          <li>Rental Policy</li>
-        </a>
-      </div>
-      <div className="fifth-li-container navigation-boxes"><a href="">
-          <li>Blog</li>
-        </a> 
-      </div> */}
+
       <div className="sixth-li-container navigation-boxes"><a href="">
           <li>About Us</li>
         </a> 
@@ -151,12 +141,12 @@ const Navbar = () => {
   </div>
   <div className="second-half">
     
-      <div className="register-now-btn">
+      <Link to={"/login"} className="register-now-btn">
         <span>LOGIN</span>
-      </div>
-      <div className="register-now-btn">
+      </Link>
+      <Link to={"/signup"} className="register-now-btn">
         <span>SIGN UP</span>
-      </div>
+      </Link>
     
   </div>
 </section>
