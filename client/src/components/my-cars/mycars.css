@@ -1,0 +1,68 @@
+.form-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.form-container {
+  min-width: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 30px;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
+  color: white;
+  margin-bottom: 50px;
+}
+.specification-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 80%;
+}
+.time-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 70%;
+  gap: 5px;
+}
+input[type='text'] {
+  color: black;
+}
+.added-image-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 20px;
+
+  overflow-x: hidden;
+  max-width: 100%;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* .added-image {
+  border-radius: 30px;
+  max-height: 250px;
+  max-width: 250px;
+  margin-bottom: 20px;
+  object-fit: fill;
+} */

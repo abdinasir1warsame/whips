@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./navbar.css"
 import AudiLogo from "../../assets/nav-images/audi-logo.png"
 import LandroverLogo from "../../assets/nav-images/landrover-logo.png"
@@ -6,9 +6,11 @@ import MercedesLogo from "../../assets/nav-images/mercedes-logo.png"
 import NissanLogo from "../../assets/nav-images/nissan-logo.png"
 import ToyotaLogo from "../../assets/nav-images/toyota-logo.png"
 import { Link } from "react-router-dom";
+import { userContext } from "../../userContext";
 
 
 const Navbar = () => {
+ const {user} =  useContext(userContext)
     return (
         <div>
 <div className="mobile-nav-wrapper">  
@@ -27,7 +29,9 @@ const Navbar = () => {
             <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </label>
-        <span>MENU</span>
+        {!!user && (<span>{user.name}</span>)}
+       
+        
       </div>
       <ul>
         <li><a href=""><label>our cars</label></a></li>
@@ -66,16 +70,23 @@ const Navbar = () => {
   <div className="mobile-logo-wrapper" onClick="goToHome()">
     <img src="" alt="" className="mobile-logo"/>
   </div>
+  
 </div>
 
         <section className="navigation-bar">         
   <div className="first-half"> 
     <ul className="navigation-list">
+    <Link to={"/"} className="sixth-li-container navigation-boxes"><a href="">
+          <li>Home</li>
+        </a> 
+      </Link>
       <div className="list-wrapper">
-      <Link to={"/cars"} className="first-li-container navigation-boxes"><a href=""> 
+        
+      <Link to={user?"/cars":"/login"} className="first-li-container navigation-boxes"><a href=""> 
           <li>Our Cars</li>
         </a>
       </Link> 
+      
     <div className="car-category-wrapper">
         <a href=""><div className="suv-container category-car-box"><span className="category-title"> 4 x 4 </span></div></a>
       <a href=""><div className="luxury-container category-car-box"><span className="category-title"> LUXURY </span></div></a>
@@ -83,7 +94,7 @@ const Navbar = () => {
       <a href=""><div className="exotic-container category-car-box"><span className="category-title"> HATCHBACK </span></div></a>
     </div>
       </div> 
-      <div className="car-brands-list-wrapper">
+      {/* <div className="car-brands-list-wrapper">
       <div className="second-li-container navigation-boxes">
         <a href="">
           <li>Car Brands</li>
@@ -127,12 +138,12 @@ const Navbar = () => {
             </div>
           </a>
         </div>
-      </div>
+      </div> */}
 
-      <div className="sixth-li-container navigation-boxes"><a href="">
-          <li>About Us</li>
+      <Link to={"/account"} className="sixth-li-container navigation-boxes"><a href="">
+          <li>Account</li>
         </a> 
-      </div>
+      </Link>
       <div className="seventh-li-container navigation-boxes"><a href="">
           <li>Contact Us</li>
         </a> 
@@ -141,12 +152,22 @@ const Navbar = () => {
   </div>
   <div className="second-half">
     
-      <Link to={"/login"} className="register-now-btn">
-        <span>LOGIN</span>
-      </Link>
-      <Link to={"/signup"} className="register-now-btn">
-        <span>SIGN UP</span>
-      </Link>
+  {!user ? (
+            // If there is no user logged in
+            <>
+              <Link to="/login" className="register-now-btn">
+                <span>LOGIN</span>
+              </Link>
+              <Link to="/signup" className="register-now-btn">
+                <span>SIGN UP</span>
+              </Link>
+            </>
+          ) : (
+            // If there is a user logged in
+            <div className="register-now-btn">
+              <span>SIGN OUT</span>
+            </div>
+          )}
     
   </div>
 </section>
