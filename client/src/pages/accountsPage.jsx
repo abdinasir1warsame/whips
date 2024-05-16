@@ -1,11 +1,11 @@
-import Accounts from "../components/accounts/accounts";
+
+import Profile from "../components/accounts/accounts"
 
 
-
-const AccountPage = () => {
+const ProfilePage = () => {
     return(
-        <Accounts></Accounts>
+       <Profile/>
     )
 }
 
-export default AccountPage
+export default ProfilePage

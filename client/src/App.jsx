@@ -11,7 +11,9 @@ import CarsPage from './pages/carsPage'
 import UserContextProvider from './userContext'
 
 import axios from 'axios'
-import AccountPage from './pages/accountsPage'
+import ProfilePage from './pages/accountsPage'
+import AllCars from './pages/allCars'
+import CarsFormPage from './pages/carsFormPage'
 
 
 axios.defaults.baseURL = "http://localhost:4000";
@@ -30,12 +32,11 @@ function App() {
       <Route index element={<IndexPage/>}/>
       <Route path="/login" element={<LoginPage/>}/>
       <Route path="/signup" element={<SignUpPage/>}/>
-      <Route path="/cars" element={<CarsPage/>}/>
-      <Route path="/account/:subpage?" element={<AccountPage/>}/>
-      <Route path="/account/:subpage/:action" element={<AccountPage/>}/>
-      {/* <Route path="/account/profile" element={<AccountPage/>}/>
-      <Route path="/account/favourites" element={<AccountPage/>}/>
-      <Route path="/account/bookings" element={<AccountPage/>}/> */}
+      <Route path="/cars" element={<AllCars/>}/>
+      <Route path="/account/:subpage?" element={<ProfilePage/>}/>
+      <Route path="/account/cars" element={<CarsPage/>}/>
+      <Route path="/account/cars/new" element={<CarsFormPage/>}/>
+  
       
       </Route>
     </Routes>

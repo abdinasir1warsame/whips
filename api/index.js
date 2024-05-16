@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const Car = require('./models/Car');
 const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
@@ -104,4 +105,53 @@ app.post('/upload', photosMiddleware.array('photos', 100), (req, res) => {
   }
   res.json(uploadedFiles);
 });
+
+app.post('/cars', (req, res) => {
+  const { token } = req.cookies;
+  const {
+    brand,
+    make,
+    seats,
+    type,
+    daily,
+    deposit,
+    photo,
+    specifications,
+    pickup,
+    dropoff,
+    aircon,
+  } = req.body;
+  if (token) {
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+      if (err) throw err;
+
+      const carDoc = await Car.create({
+        owner: userData.id,
+        brand,
+        make,
+        seats,
+        type,
+        daily,
+        deposit,
+        photo,
+        specifications,
+        pickup,
+        dropoff,
+        aircon,
+      });
+      res.json(carDoc);
+    });
+  }
+});
+
+app.get('/cars', (req, res) => {
+  const { token } = req.cookies;
+  if (token) {
+    jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+      const { id } = userData;
+      res.json(await Car.find({ owner: id }));
+    });
+  }
+});
+
 app.listen(4000);

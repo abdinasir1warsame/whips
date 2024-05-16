@@ -5,16 +5,18 @@ const carSchema = new mongoose.Schema({
   make: String,
   model: String,
   seats: String,
-  bodyType: String,
-  dailyPrice: String,
-  Description: String,
-  gearBox: String,
-  fuelType: String,
-  airCon: Boolean,
-  Deposit: String,
-  Photo: String,
-  pickUp: Number,
-  dropOff: Number,
+  type: String,
+  daily: String,
+  description: String,
+  specifications: {
+    gearBox: String, // This field represents the gearbox type of the vehicle (e.g., automatic, manual).
+    fuelType: String, // This field represents the type of fuel the vehicle uses (e.g., petrol, diesel, electric).
+    aircon: Boolean, // This field indicates whether the vehicle has air conditioning or not.
+  },
+  deposit: String,
+  photo: [String],
+  pickup: String,
+  dropOff: String,
 });
 
 const CarModel = mongoose.model('Car', carSchema);

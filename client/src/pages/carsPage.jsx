@@ -1,10 +1,10 @@
-import Cars from "../components/cars/cars"
+import MyCars from "../components/my-cars/myCars"
 
 
-const CarsPage = () => {
+const CarsPage= () => {
     return (
     
-   <Cars/>)
+   <MyCars/>)
 }
 
 export default CarsPage
