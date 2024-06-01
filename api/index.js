@@ -109,7 +109,8 @@ app.post('/upload', photosMiddleware.array('photos', 100), (req, res) => {
 app.post('/cars', (req, res) => {
   const { token } = req.cookies;
   const {
-    brand,
+    model,
+    doors,
     make,
     seats,
     type,
@@ -127,9 +128,10 @@ app.post('/cars', (req, res) => {
 
       const carDoc = await Car.create({
         owner: userData.id,
-        brand,
+        model,
         make,
         seats,
+        doors,
         type,
         daily,
         deposit,
@@ -152,6 +154,51 @@ app.get('/cars', (req, res) => {
       res.json(await Car.find({ owner: id }));
     });
   }
+});
+app.get('/cars/:id', async (req, res) => {
+  const { id } = req.params;
+  res.json(await Car.findById(id));
+});
+app.put('/cars', async (req, res) => {
+  const { token } = req.cookies;
+  const {
+    id,
+    model,
+    doors,
+    make,
+    seats,
+    type,
+    daily,
+    deposit,
+    photo,
+    specifications,
+    pickup,
+    dropoff,
+    aircon,
+  } = req.body;
+
+  jwt.verify(token, jwtSecret, {}, async (err, userData) => {
+    if (err) throw err;
+    const carDoc = await Car.findById(id);
+    if (userData.id === carDoc.owner.toString()) {
+      carDoc.set({
+        model,
+        make,
+        seats,
+        doors,
+        type,
+        daily,
+        deposit,
+        photo,
+        specifications,
+        pickup,
+        dropoff,
+        aircon,
+      });
+      await carDoc.save();
+      res.json('ok');
+    }
+  });
 });
 
 app.listen(4000);

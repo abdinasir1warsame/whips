@@ -9,9 +9,11 @@ const Car = () => {
         
           <div className="info">
             <div className="info-row">
-              <h1>Audi A4</h1>
-              <div> <span className="price">£60</span>
-              <span className="period ">/ Daily</span></div>
+             <div><h2 className="price">Saloon </h2></div>
+              
+       
+              <div> <h2 className="price">Petrol</h2>
+              <span className="period "></span></div>
              
             </div>
             <div className="info-row">
@@ -28,16 +30,9 @@ const Car = () => {
         </section>
         
         <section className="data">
-          {/* <h2>Gallery</h2>
-          <div className="gallery">
-            <div className="pic photo1"></div>
-            <div className="pic photo2"></div>
-            <div className="pic photo3"></div>
-            <div className="pic photo4"></div>
-          </div> */}
-          
-          <h2>Description</h2>
-          <p className="desc">We don't just rent apartments. From the moment you walk through the front door you'll feel the comfort and security that makes our residents happy to call us the best.</p>
+          <div className="car-name"><h1 className="">bmw</h1><h1 className="">3 series</h1></div>
+          <div className="car-cost"><h2>£100/day</h2> <h2>deposit:£600</h2></div>
+
         </section>
         
         <section className="confirmation">

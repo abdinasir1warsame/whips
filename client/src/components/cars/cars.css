@@ -36,7 +36,7 @@ button {
 
 .header {
   width: 100%;
-  height: 350px;
+  height: 250px;
   position: relative;
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
@@ -80,6 +80,7 @@ button {
   border-radius: 30px;
   box-sizing: border-box;
   padding: 20px;
+  text-shadow: 0 2px 4px rgba(1, 1, 1, 0.375);
 }
 
 .info-row {
@@ -114,7 +115,7 @@ button {
 .rating small,
 .rating .mark {
   color: #eee;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
 }
 
@@ -136,73 +137,53 @@ button {
   background-size: 8px;
 }
 
-.period {
-  color: white;
-  font-size: 10px;
-  font-weight: 300;
-}
-
 .data {
   width: 100%;
   box-sizing: border-box;
-  padding: 50px 30px 100px;
+  padding: 35px 30px 100px;
   max-height: 310px;
   overflow-y: auto;
   margin-top: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
-
-h2 {
-  font-size: 16px;
-  font-weight: 600;
-  margin: 0 0 10px;
-}
-
-.gallery {
-  width: 100%;
+.car-name {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
+  gap: 15px;
+  font-size: 28px;
+  font-weight: bolder;
   margin-bottom: 20px;
-}
+  font-weight: 900;
 
-.pic {
-  flex: 1;
-  height: 60px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin-right: 15px;
-  border-radius: 10px;
+  color: transparent;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #79aeda 8%,
+      /* Light Admiral Blue */ #416c8a 30%,
+      /* Medium Admiral Blue */ #386d96 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #7ba6ce 8%,
+      /* Light Admiral Blue */ #7597b6 25%,
+      /* Medium Admiral Blue */ #7196b1 62.5%,
+      /* Dark Admiral Blue */ #37668b 100%
+    );
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 4px 8px rgba(1, 1, 1, 0.375);
 }
-
-.pic:last-child {
-  margin-right: 0;
+.car-cost {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 0 4px 8px rgba(1, 1, 1, 0.51);
 }
-
-.photo1 {
-  background-image: url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
-}
-
-.photo2 {
-  background-image: url(https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);
-}
-
-.photo3 {
-  background-image: url(https://images.unsplash.com/photo-1523217582562-09d0def993a6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1100&q=80);
-}
-
-.photo4 {
-  background-image: url(https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80);
-}
-
-.desc {
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-  font-weight: 300;
-  color: #aaa;
-}
-
 .confirmation {
   position: absolute;
   bottom: 0;
