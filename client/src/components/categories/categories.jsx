@@ -19,7 +19,7 @@ const Categories = () => {
                     <div className="category-section">
 
  <div className="category-container">
- <h2 class="category-title">Explore By Car Type</h2>
+
   <div className="type-row">
     <div className="card-category">
       <img src={fourByFour} alt="Mercedes"/>
@@ -38,10 +38,10 @@ const Categories = () => {
       <div className="overlay">Hatchback</div>
     </div>
   </div>
-  <h2 class="category-title">Explore Top Car Brands</h2>
+
   <div className="brand-row">
     <div className="card-category">
-      <img src={MercedesLogo} alt="Mercedes"/>
+      <img src={AudiLogo} alt="Mercedes"/>
       <div className="overlay">Mercedes</div>
     </div>
     <div className="card-category">

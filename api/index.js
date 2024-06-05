@@ -127,7 +127,7 @@ app.post('/cars', (req, res) => {
       if (err) throw err;
 
       const carDoc = await Car.create({
-        owner: userData.id,
+        owner: [userData.id],
         model,
         make,
         seats,
@@ -146,7 +146,7 @@ app.post('/cars', (req, res) => {
   }
 });
 
-app.get('/cars', (req, res) => {
+app.get('/user-cars', (req, res) => {
   const { token } = req.cookies;
   if (token) {
     jwt.verify(token, jwtSecret, {}, async (err, userData) => {
@@ -157,8 +157,32 @@ app.get('/cars', (req, res) => {
 });
 app.get('/cars/:id', async (req, res) => {
   const { id } = req.params;
-  res.json(await Car.findById(id));
+
+  try {
+    const carDoc = await Car.findById(id);
+    if (!carDoc) {
+      return res.status(404).json({ message: 'Car not found' });
+    }
+
+    const userDoc = await User.findById(carDoc.owner);
+    if (!userDoc) {
+      return res.status(404).json({ message: 'Owner not found' });
+    }
+
+    res.json({
+      ...carDoc.toObject(),
+      owner: {
+        name: userDoc.name,
+        email: userDoc.email,
+      },
+    });
+  } catch (e) {
+    res
+      .status(500)
+      .json({ message: 'Internal server error', error: e.message });
+  }
 });
+
 app.put('/cars', async (req, res) => {
   const { token } = req.cookies;
   const {
@@ -199,6 +223,9 @@ app.put('/cars', async (req, res) => {
       res.json('ok');
     }
   });
+});
+app.get('/cars', async (req, res) => {
+  res.json(await Car.find());
 });
 
 app.listen(4000);

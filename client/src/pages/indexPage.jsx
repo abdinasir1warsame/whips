@@ -5,11 +5,12 @@ import Categories from '../components/categories/categories'
 import Hero from '../components/hero/hero'
 
 
+
 const IndexPage = () => {
     return(
             <div>    
     <Hero/>
-    
+
  
     <Categories/>
     <AboutUs/>

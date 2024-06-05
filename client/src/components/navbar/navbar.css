@@ -20,7 +20,7 @@ section.navigation-bar {
       /* Medium Admiral Blue */ #1d3d55 62.5%,
       /* Dark Admiral Blue */ #1d3d55 100%
     );
-  z-index: 1;
+
   text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
   color: white;
 }
@@ -279,7 +279,6 @@ section.navigation-bar {
 .sixth-li-container.navigation-boxes,
 .seventh-li-container.navigation-boxes {
   position: relative;
-  z-index: 40;
 }
 
 @media only screen and (max-width: 942px) {

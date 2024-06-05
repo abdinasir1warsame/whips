@@ -9,37 +9,18 @@ const MyCars = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    axios.get('/cars').then(({ data }) => {
+    axios.get('/user-cars').then(({ data }) => {
       setCars(data);
     });
   }, []);
 
-  // useEffect(() => {
-  //   // Create a style element
-  //   const styleElement = document.createElement('style');
 
-  //   // Generate CSS for each car to set the background image of the ::before pseudo-element
-  //   const styles = cars.map((car, index) => `
-  //     .my-cars-section:nth-child(${index + 1}) .headers::before {
-  //       background-image: url(http://localhost:4000/uploads/${car.photo[0]});
-  //     }
-  //   `).join('');
-
-  //   // Set the generated CSS to the style element
-  //   styleElement.innerHTML = styles;
-  //   document.head.appendChild(styleElement);
-
-  //   // Cleanup: remove the style element when the component unmounts or cars change
-  //   return () => {
-  //     document.head.removeChild(styleElement);
-  //   };
-  // }, [cars]);
 
   return (
-    <div>
+    <div className="pt-8 bg-gray min-h-screen">
       <AccountNav />
-      <div className="text-center mt-5">
-        <Link className="inline-flex gap-1 bg-blue-300 text-white py-2 px-6 rounded-full" to={'/account/cars/new'}>
+      <div className="text-center mt-7">
+        <Link className="inline-flex gap-1 background-btn3 text-white py-2 px-6 rounded-full" to={'/account/cars/new'}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
           </svg>
@@ -71,6 +52,10 @@ const MyCars = () => {
                 <div className="car-name"><h1 className="">{car.make}</h1><h1 className="">{car.model}</h1></div>
                 <div className="car-cost"><h2>{car.daily}/day</h2> <h2>deposit:{car.deposit}</h2></div>
               </section>
+              <section className="confirmation">
+          
+          <button type="button" className="main">Edit</button>
+        </section>
             </div>
           </Link>
         ))}

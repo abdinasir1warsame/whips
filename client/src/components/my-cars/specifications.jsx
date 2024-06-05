@@ -13,26 +13,26 @@ const Specifications = ({ selected, onChange }) => {
   }, [selected]);
 
   return (
-    <div className="specification-container">
+    <div className="specification-container mb-4 ">
       <div>
-        <h3>Gear Box</h3>
-        <label htmlFor="automatic">
+        <h3 className="mb-4">Gear Box</h3>
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2 " htmlFor="automatic">
           <input
             type="radio"
             id="automatic"
             name="gearbox"
-            className="border border-gray-300 rounded-full px-4 py-2 mb-4 mr-2"
+            className=" mb-4 mr-2"
             onChange={() => handleOptionChange("gearBox", "automatic")}
             checked={selected.gearBox === "automatic"}
           />
           <span className="mr-2">Automatic</span>
         </label>
-        <label htmlFor="manual">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2"  htmlFor="manual">
           <input
             type="radio"
             id="manual"
             name="gearbox"
-            className="border border-gray-300 rounded-full px-4 py-2 mb-4 mr-2"
+            className="  mb-4 mr-2"
             onChange={() => handleOptionChange("gearBox", "manual")}
             checked={selected.gearBox === "manual"}
           />
@@ -40,24 +40,24 @@ const Specifications = ({ selected, onChange }) => {
         </label>
       </div>
       <div>
-        <h3>Fuel Type</h3>
-        <label htmlFor="diesel">
+         <h3 className="mb-4">Fuel Type</h3>
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2 " htmlFor="diesel">
           <input
             type="radio"
             id="diesel"
             name="fuel"
-            className="border border-gray-300 rounded-full px-4 py-2 mb-4 mr-2"
+            className="  mb-4 mr-2"
             onChange={() => handleOptionChange("fuelType", "diesel")}
             checked={selected.fuelType === "diesel"}
           />
           <span className="mr-2">Diesel</span>
         </label>
-        <label htmlFor="petrol">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn2 " htmlFor="petrol">
           <input
             type="radio"
             id="petrol"
             name="fuel"
-            className="border border-gray-300 rounded-full px-4 py-2 mb-4 mr-2"
+            className=" mb-4 mr-2"
             onChange={() => handleOptionChange("fuelType", "petrol")}
             checked={selected.fuelType === "petrol"}
           />
@@ -65,13 +65,13 @@ const Specifications = ({ selected, onChange }) => {
         </label>
       </div>
       <div>
-        <h3>Air con</h3>
-        <label htmlFor="aircon">
+         <h3 className="mb-4">Air con</h3>
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn2 " htmlFor="aircon">
           <input
             type="checkbox"
             id="aircon"
             name="aircon"
-            className="border border-gray-300 rounded-full px-4 py-2 mb-4 mr-2"
+            className=" mb-4 mr-2"
             onChange={() => handleOptionChange("aircon", !selected.aircon)}
             checked={selected.aircon}
           />

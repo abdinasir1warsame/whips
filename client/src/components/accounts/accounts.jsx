@@ -1,6 +1,9 @@
 import React, { useContext, useState } from "react";
 import { userContext } from "../../userContext";
 import { Link, Navigate, redirect, useParams } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+
 import axios from "axios";
 import "./accounts.css"
 
@@ -36,12 +39,34 @@ async function logout () {
     return<Navigate to={toHomePage}/>
    }
     return (
-        <div>
+        <div className=" bg-gray min-h-screen pt-8">
     <AccountNav/>
         {subpage === "profile" && (
-            <div className="text-center m-w-lg mx-auto">
-  Logged in as {user.name} ({user.email})<br/>
-  <button onClick={logout} className="bg-gray-300 m-w-sm mt-2"> Logout</button>
+            <div className=" h-full ">
+                <div className="flex justify-center gap-2">  <button onClick={logout} className=" background-btn3  px-6 py-2 rounded-full m-w-sm mt-8"><FontAwesomeIcon icon={ faSignOutAlt }  /> Logout</button></div>
+
+  <form  className="form-section mt-10">
+                <div className="form-container text-shadow">
+
+
+
+  <h1 className="mb-4 text-lg font-semibold">Name</h1>
+
+      <input  className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder={user.name} />
+      <h1 className="mb-4 text-lg font-semibold">Email</h1>
+                    <input  className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder={user.email} />
+                    <h1 className="mb-4 text-lg font-semibold">Contact</h1>
+                    <input  className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="doors, for example: 5 doors" />
+             
+              
+                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn2 px-4 w-1/3 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Details</button></div>
+                   
+                    </div>
+
+                    
+                
+</form>
+  
 
             </div>
         )}

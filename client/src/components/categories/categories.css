@@ -5,7 +5,7 @@
   align-items: center;
   min-height: 110vh;
   min-width: 100vw;
-  background: radial-gradient(
+  /* background: radial-gradient(
       ellipse farthest-corner at right bottom,
       #142b3d 8%,
       #102331 30%,
@@ -18,18 +18,22 @@
       #526a80 25%,
       #1d3d55 62.5%,
       #1d3d55 100%
-    );
+    ); */
   margin-bottom: 50px;
 }
 
 .category-container {
   margin: 0 auto;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: white;
-  max-width: 90vw;
-  min-height: 80vh;
+  max-width: 80vw;
+  height: 65vh;
   border-radius: 10px;
-  box-shadow: 0px 0px 24px #85bbf1;
+  box-shadow: 0px 0px 24px black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
 }
 
 h2 {
@@ -56,7 +60,7 @@ h2 {
   width: calc(
     20% - 5px
   ); /* Adjust the percentage to change the width of each card-category */
-  margin-bottom: 40px;
+
   position: relative;
   border-radius: 15px;
   overflow: hidden;
@@ -96,10 +100,26 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.512);
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #253f54 8%,
+      #142b3d 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #485e72 8%,
+      #3e5162 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
+
+  backdrop-filter: blur(30px);
   color: white;
   padding: 15px;
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
+  z-index: 2;
 }
