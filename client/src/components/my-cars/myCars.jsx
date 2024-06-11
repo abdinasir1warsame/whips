@@ -50,7 +50,7 @@ const MyCars = () => {
               </section>
               <section className="car-data">
                 <div className="car-name"><h1 className="">{car.make}</h1><h1 className="">{car.model}</h1></div>
-                <div className="car-cost"><h2>{car.daily}/day</h2> <h2>deposit:{car.deposit}</h2></div>
+                <div className="car-cost"><h2>£{car.daily}/day</h2> <h2>deposit:{car.deposit}</h2></div>
               </section>
               <section className="confirmation">
           

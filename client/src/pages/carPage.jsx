@@ -10,6 +10,7 @@ import { faCogs } from '@fortawesome/free-solid-svg-icons/faCogs'; // Gearbox ic
 import { faCar } from '@fortawesome/free-solid-svg-icons/faCar'; // Car body type icon
 
 import axios from "axios";
+import BookingWidget from "../components/booking/booking-widget";
 
 const CarPage = () => {
     const {id} = useParams();
@@ -65,7 +66,7 @@ if(showAllPhotos) {
       </div>
      
       <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr] ">
-        <div className="bg-white shadow shadow-md mt-5 rounded-2xl rounded-r-none h-full mr-3 py-2">
+        <div className="flex flex-col justify-around bg-white shadow shadow-md mt-5 rounded-2xl rounded-r-none h-full mr-3 py-2">
           
             <h1 className="text-2xl font-bold px-7 mb-2 px-2 text-shadow text-color2">Vehicle Summary</h1>
      <div className=" flex  p-4 justify-center ml-2 ">
@@ -92,27 +93,7 @@ if(showAllPhotos) {
           
      <h1 className="text-2xl font-bold text-center mt-2 mb-1 px-2 text-shadow text-color ">This {car.make} {car.model} is rented out by {car.owner.name}. </h1>
         </div>
-        <div className="bg-white  shadow px-4 rounded-2xl rounded-l-none mt-5 h-full  ">
-            <div className="text-2xl text-center font-bold mt-4 text-shadow text-color"> Price: {car.daily} / per day </div>
-            <div className="border rounded-2xl mt-4">
-                <div className="flex justify-center">
-                <div className=" flex flex-col py-3 px-4 ">
-                <label>Pick up: </label>
-                <input type="date" />
-             
-            </div>
-            <div className="flex flex-col py-3 px-4 border-l ">
-                <label>Drop off: </label>
-                <input type="date" />
-            </div>
-                </div>
-                <div></div>
-       
-            </div>
-         
-           <div className="flex justify-center  mt-4 "><button className="background-btn2 w-1/3 rounded-2xl h-12 mt-5  ">Book this car </button></div>
-        
-        </div>
+      <BookingWidget car={car}/>
 
       </div>
       

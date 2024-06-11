@@ -1,5 +1,5 @@
 import React from "react";
-import Bmw from "../../assets/car-images/audi-about2.avif"
+
 import "./about.css"
 
 

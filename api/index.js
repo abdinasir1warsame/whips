@@ -3,6 +3,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const Car = require('./models/Car');
+const Booking = require('./models/Booking');
+
 const cookieParser = require('cookie-parser');
 const imageDownloader = require('image-downloader');
 const multer = require('multer');
@@ -226,6 +228,19 @@ app.put('/cars', async (req, res) => {
 });
 app.get('/cars', async (req, res) => {
   res.json(await Car.find());
+});
+app.post('/bookings', async (req, res) => {
+  const { car, pickUp, dropOff, name, phone, email, price } = req.body;
+  const bookingDoc = await Booking.create({
+    car,
+    pickUp,
+    dropOff,
+    name,
+    email,
+    phone,
+    price,
+  });
+  res.json(bookingDoc);
 });
 
 app.listen(4000);

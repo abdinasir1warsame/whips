@@ -97,7 +97,7 @@ Upload</label>
 
 <div className="flex flex-row justify-center space-x-4  ">
 <input value={photoLink} onChange={ev => setPhotoLink (ev.target.value)} className= "w-3/4 border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="Add using a link .....jpg" />
-<button onClick={addPhotoByLink} className="background-btn2 px-4 rounded-full h-10 w-1/4 text-lg content-center ">Add &nbsp; Photo</button>
+<button onClick={addPhotoByLink} className="background-btn3 px-4 rounded-full h-10 w-1/4 text-lg content-center ">Add &nbsp; Photo</button>
 </div>
 </div>
     

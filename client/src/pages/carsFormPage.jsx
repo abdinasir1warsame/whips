@@ -136,7 +136,7 @@ setSpecifications(data.specifications)
                     <div> <h3 className="mb-2">Pick up time</h3>  <input value={pickup} onChange={ev => setPickup(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="16:00" /></div>
                     <div>  <h3 className="mb-2">Drop off time</h3>  <input value={dropoff} onChange={ev => setDropoff(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="16:00" /></div>
                     </div> */}
-                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn2 px-4 w-1/3 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Car</button></div>
+                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn3 px-4 w-1/3 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Car</button></div>
                    
                     </div>
 

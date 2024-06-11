@@ -1,19 +1,31 @@
 import React from "react";
-import AboutUs from '../components/about-us/about-us'
 
-import Categories from '../components/categories/categories'
+
+
 import Hero from '../components/hero/hero'
+import Services from "../components/why-choose-us/choose-us";
+
+import Faq from '../components/faq/faq'
+import Testimonials from "../components/testimonials/testimonials";
+import Footer from "../components/footer/footer";
+import UserJourney from "../components/user-journey/user-journey";
+import FeaturedCars from "../components/cars-carousel/featured-cars";
+
 
 
 
 const IndexPage = () => {
     return(
-            <div>    
+            <div className="max-w-full">    
     <Hero/>
-
+    <FeaturedCars/>
+    <UserJourney/>
+    <Services/>
  
-    <Categories/>
-    <AboutUs/>
+
+<Testimonials/>
+<Faq/>
+<Footer/>
     
     </div>
     )

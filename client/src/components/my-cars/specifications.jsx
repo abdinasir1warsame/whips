@@ -16,7 +16,7 @@ const Specifications = ({ selected, onChange }) => {
     <div className="specification-container mb-4 ">
       <div>
         <h3 className="mb-4">Gear Box</h3>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2 " htmlFor="automatic">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="automatic">
           <input
             type="radio"
             id="automatic"
@@ -27,7 +27,7 @@ const Specifications = ({ selected, onChange }) => {
           />
           <span className="mr-2">Automatic</span>
         </label>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2"  htmlFor="manual">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3"  htmlFor="manual">
           <input
             type="radio"
             id="manual"
@@ -41,7 +41,7 @@ const Specifications = ({ selected, onChange }) => {
       </div>
       <div>
          <h3 className="mb-4">Fuel Type</h3>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn2 " htmlFor="diesel">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="diesel">
           <input
             type="radio"
             id="diesel"
@@ -52,7 +52,7 @@ const Specifications = ({ selected, onChange }) => {
           />
           <span className="mr-2">Diesel</span>
         </label>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn2 " htmlFor="petrol">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn3 " htmlFor="petrol">
           <input
             type="radio"
             id="petrol"
@@ -66,7 +66,7 @@ const Specifications = ({ selected, onChange }) => {
       </div>
       <div>
          <h3 className="mb-4">Air con</h3>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn2 " htmlFor="aircon">
+        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-2 background-btn3 " htmlFor="aircon">
           <input
             type="checkbox"
             id="aircon"

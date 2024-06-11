@@ -4,6 +4,7 @@ import { Link, Navigate, redirect, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
 
+
 import axios from "axios";
 import "./accounts.css"
 
@@ -45,7 +46,7 @@ async function logout () {
             <div className=" h-full ">
                 <div className="flex justify-center gap-2">  <button onClick={logout} className=" background-btn3  px-6 py-2 rounded-full m-w-sm mt-8"><FontAwesomeIcon icon={ faSignOutAlt }  /> Logout</button></div>
 
-  <form  className="form-section mt-10">
+  <form  className="form-section  min-w-[90%] mt-10">
                 <div className="form-container text-shadow">
 
 
@@ -59,7 +60,7 @@ async function logout () {
                     <input  className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="doors, for example: 5 doors" />
              
               
-                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn2 px-4 w-1/3 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Details</button></div>
+                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn3 px-4 w-1/2 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Details</button></div>
                    
                     </div>
 
@@ -67,6 +68,7 @@ async function logout () {
                 
 </form>
   
+
 
             </div>
         )}

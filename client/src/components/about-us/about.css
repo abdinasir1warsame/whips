@@ -87,7 +87,7 @@
   width: calc(65vw - 25px); /* Changed width to take over 70vw */
   max-width: 60%;
   height: 65vh;
-  background-image: url('https://images.unsplash.com/photo-1609623279111-449b1dedf639?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTc1fHxibHVlJTIwc3BvcnRzJTIwY2FyfGVufDB8MHwwfHx8MA%3D%3D');
+
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

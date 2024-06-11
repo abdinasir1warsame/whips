@@ -5,12 +5,13 @@ import React, { useState, useEffect } from "react";
 // import Bmw from "../../assets/car-images/3-series.png"
 
 
-import Bmw5series from "../../assets/car-images/5 series.png"
-import Jaguar from "../../assets/car-images/jaguar.png"
-import Tesla from "../../assets/car-images/tesla.png"
+import Mazerati from "../../assets/car-images/mazerati.png"
+import AudiA7 from "../../assets/car-images/audi-white.png"
+import Bmw from "../../assets/car-images/bmw-white.png"
 
-import Audi from "../../assets/car-images/audi-etron.png"
-import Toyota from "../../assets/car-images/toyota.png"
+
+import Audi from "../../assets/car-images/audi-q8.png"
+
 
 
 
@@ -21,15 +22,7 @@ const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [imageArray] = useState([
     
-Jaguar,
-Audi,
-Bmw5series,
-Jaguar,
-Audi,
-Bmw5series,
-Jaguar,
-Audi,
-Bmw5series,
+AudiA7,Mazerati,Bmw,Audi,AudiA7,Mazerati,Bmw,Audi
 
 
 
@@ -59,9 +52,9 @@ Bmw5series,
 
 
       <section className="main-section">
-        <div className="text-section block">
+        <div className="text-section block mt-20">
         <h1 className="banner-title">Whips Car Hire</h1>
-<h3 className="subheader">Your Reliable Rental Solution</h3>
+<h3 className="subheader text-color2">Your Reliable Rental Solution</h3>
 <p>Discover reliable and affordable car rentals at Whips Car Hire. With a diverse selection of vehicles, transparent pricing, and exceptional service, we make renting a car easy. Experience the freedom of the open road today.</p>
 
           <a href="#">Join today</a>

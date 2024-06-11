@@ -1,305 +1,42 @@
-.navigation-bar a:focus-visible {
-  outline: none;
-}
-
-section.navigation-bar {
-  /*   border: 3px dashed; */
-  display: flex;
-  justify-content: space-between;
+.main-nav {
   background: radial-gradient(
       ellipse farthest-corner at right bottom,
       #142b3d 8%,
-      /* Light Admiral Blue */ #102331 30%,
-      /* Medium Admiral Blue */ #142b3d 40%,
-      /* Dark Admiral Blue */ transparent 80%
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
     ),
     radial-gradient(
       ellipse farthest-corner at left top,
-      #1d3d55 8%,
-      /* Light Admiral Blue */ #526a80 25%,
-      /* Medium Admiral Blue */ #1d3d55 62.5%,
-      /* Dark Admiral Blue */ #1d3d55 100%
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
     );
-
-  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
   color: white;
-}
+  transform: translateY(-2px);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.643);
 
-.navigation-bar .first-half {
-  /*   border: 2px dashed blue; */
-  width: 85%;
-  text-transform: uppercase;
-}
-
-.navigation-bar .first-half li:hover {
-  color: #3991e8f9;
-}
-
-.navigation-bar .navigation-list {
-  /*   border: 3px solid pink; */
-  display: flex;
-  justify-content: space-around;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  padding-left: 0;
-  height: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-  position: relative;
-  align-items: center;
-}
-
-.navigation-list li {
-  /*   border: 3px dashed cyan; */
-  height: 70%;
-  padding: 10px;
-  text-align: center;
-}
-
-.navigation-list a {
-  color: white;
-  text-decoration: none;
-  list-style-type: none;
-}
-
-.navigation-bar .navigation-list > li {
-  display: inline-block;
-  color: white;
-  background: red;
-}
-
-.navigation-bar .second-half {
-  width: 25%;
-  display: flex;
-  flex-direction: row;
-}
-
-.navigation-bar .second-half a:nth-child(1) {
-  text-decoration: none;
-  width: 50%;
-}
-
-.navigation-bar > .second-half .register-now-btn {
-  width: 100%;
-
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 600;
-  text-align: center;
-  padding: 15px 0px;
-  color: white;
-  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
-  color: white;
-
-  cursor: pointer;
-}
-
-.navigation-boxes .car-type {
-  width: 200px;
-  height: 100px;
-  position: relative;
-  background-size: 100%;
-  background-position: center;
-  border-radius: 10px;
-}
-
-.second-li-container {
-  position: relative;
-  z-index: 20;
-}
-
-.navigation-bar .navigation-boxes .car-type img {
-  width: 100%;
-  height: 100px;
-  object-fit: cover;
-}
-
-.navigation-bar .car-type span {
-  position: absolute;
-  color: white;
-  bottom: 10px;
-  left: 10px;
-  letter-spacing: 3px;
-}
-
-.navigation-bar .first-li-container {
-  /*   border: 10px dashed; */
-  transition: all 400ms ease-in-out;
-}
-
-.navigation-bar .car-category-wrapper {
-  opacity: 0;
-  visibility: hidden;
-  position: absolute;
-  top: 60%;
-  /*   border: 3px dotted purple; */
-  padding: 30px 0px 20px 10px;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  transition: all 100ms ease-in;
-  z-index: 10;
-}
-
-.navigation-bar .first-li-container:hover + .car-category-wrapper {
-  opacity: 1;
-  visibility: visible;
-}
-
-.navigation-bar .car-category-wrapper:hover {
-  opacity: 1;
-  visibility: visible;
-}
-
-.navigation-bar .category-car-box {
-  width: 200px;
-  height: 100px;
-  border-radius: 20px;
-  position: relative;
-}
-
-.navigation-bar .suv-container {
-  background: linear-gradient(
-      360deg,
-      rgba(23, 18, 0, 1) 0%,
-      rgba(0, 212, 255, 0) 58%
-    ),
-    url('../../assets/nav-images/bmw-x5.avif') no-repeat center;
-  background-size: cover;
-}
-
-.navigation-bar .luxury-container {
-  background: linear-gradient(
-      360deg,
-      rgba(23, 18, 0, 1) 0%,
-      rgba(0, 212, 255, 0) 58%
-    ),
-    url('../../assets/nav-images/luxury.avif') no-repeat center;
-  background-size: cover;
-  transition-delay: 250ms;
-}
-
-.navigation-bar .sports-container {
-  background: linear-gradient(
-      360deg,
-      rgba(23, 18, 0, 1) 0%,
-      rgba(0, 212, 255, 0) 58%
-    ),
-    url('../../assets/nav-images/sports-car.avif') no-repeat center;
-  background-size: cover;
-  transition-delay: 500ms;
-}
-
-.navigation-bar .exotic-container {
-  background: linear-gradient(
-      360deg,
-      rgba(23, 18, 0, 1) 0%,
-      rgba(0, 212, 255, 0) 58%
-    ),
-    url('../../assets/car-images/hatch.jpg') no-repeat center;
-  background-size: cover;
-  position: relative;
-  transition-delay: 750ms;
-}
-
-.navigation-bar .category-car-box .category-title {
-  position: absolute;
-  bottom: 15px;
-  left: 20px;
-  letter-spacing: 10px;
-}
-
-.navigation-bar .second-li-container li {
-  padding: 15px 0;
-}
-
-.car-brands-list-wrapper {
-  position: relative;
-  z-index: 20;
-}
-
-.navigation-bar .car-brands-container {
-  position: absolute;
-  display: flex;
-  flex-wrap: wrap;
-  width: 95vw;
-  left: -90%;
-  top: 30%;
-  padding-top: 50px;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 100ms ease-in-out;
-  z-index: 10;
-}
-
-.navigation-bar .car-brand {
-  background: #eee;
-  display: flex;
-  align-items: center;
-  width: 200px;
-  height: 100px;
-  transition: all 100ms ease-in-out;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-
-.navigation-bar .car-brand:hover {
-  background: #fff;
-}
-
-.navigation-bar .car-brand img {
-  width: 40px;
-  margin-left: 15px;
-}
-
-.navigation-bar .car-brand span {
-  margin-left: 5%;
-  color: #292f3b;
-}
-
-.navigation-bar .car-brand:hover span {
-  color: #042a50ca;
-}
-
-.navigation-bar .second-li-container:hover + .car-brands-container {
-  opacity: 1;
-  visibility: visible;
-  transition: all 700ms ease-in-out;
-  z-index: 10;
-}
-
-.navigation-bar .car-brands-container:hover {
-  opacity: 1;
-  visibility: visible;
-}
-
-.first-li-container.navigation-boxes,
-.third-li-container.navigation-boxes,
-.fourth-li-container.navigation-boxes,
-.fifth-li-container.navigation-boxes,
-.sixth-li-container.navigation-boxes,
-.seventh-li-container.navigation-boxes {
-  position: relative;
-}
-
-@media only screen and (max-width: 942px) {
-  .navigation-bar .car-category-wrapper {
-    top: 70%;
-  }
-
-  .navigation-bar .car-brands-container {
-    top: 45%;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  section.navigation-bar {
-    display: none;
-  }
+  text-shadow: 0 8px 16px rgba(10, 10, 10, 0.991);
 }
 
 /* mobile navbar */
 nav.mobile {
-  background: #2c3e50;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
+
   height: 50px;
   padding: 0 16px;
   display: -ms-flexbox;
@@ -357,7 +94,20 @@ nav.mobile .m-menu {
 }
 
 nav.mobile .m-menu__overlay {
-  background: #2c3e50;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
   position: absolute;
   top: 0;
   bottom: 0;
@@ -426,7 +176,7 @@ nav.mobile .m-menu ul li label.a-label__chevron::after {
   display: inline-block;
   height: 10px;
   width: 10px;
-  border-color: #333;
+  border-color: white;
   border-style: solid;
   border-width: 1px 1px 0 0;
   -moz-transform: rotate(45deg);
@@ -470,7 +220,23 @@ nav.mobile .m-menu__checkbox:checked ~ .m-menu {
 .mobile-nav-wrapper {
   display: none;
   justify-content: space-between;
-  background: linear-gradient(132deg, #6b6c6e 2%, #2c3e50 100%);
+
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #142b3d 8%,
+      #102331 30%,
+      #142b3d 40%,
+      transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      #526a80 25%,
+      #1d3d55 62.5%,
+      #1d3d55 100%
+    );
+  margin-bottom: 1px;
+  background-color: white;
   align-items: center;
   gap: 80px;
 }
@@ -490,5 +256,8 @@ nav.mobile .m-menu__checkbox:checked ~ .m-menu {
 @media only screen and (max-width: 768px) {
   .mobile-nav-wrapper {
     display: flex;
+  }
+  .main-nav {
+    display: none !important;
   }
 }
