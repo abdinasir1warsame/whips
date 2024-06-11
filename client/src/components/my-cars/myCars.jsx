@@ -44,7 +44,7 @@ const MyCars = () => {
                       <small>{car.seats} Seats / {car.doors} Doors</small>
                     </div>
                     <div className="rating"><small>includes 400 miles</small></div>
-                    <img src="" alt="" />
+                
                   </div>
                 </div>
               </section>

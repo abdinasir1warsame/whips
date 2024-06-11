@@ -242,5 +242,35 @@ app.post('/bookings', async (req, res) => {
   });
   res.json(bookingDoc);
 });
+app.get('/cars/filter', async (req, res) => {
+  try {
+    const { make, model, priceRange } = req.query;
+
+    // Build the query object
+    let query = {};
+
+    if (make) {
+      query.make = make;
+    }
+
+    if (model) {
+      query.model = model;
+    }
+
+    if (priceRange) {
+      const [min, max] = priceRange.split('-').map(Number);
+      query.daily = { $gte: min, $lte: max };
+    }
+
+    // Query the database with the built query object
+    const cars = await Car.find(query);
+
+    res.json(cars);
+  } catch (e) {
+    res
+      .status(500)
+      .json({ message: 'Internal server error', error: e.message });
+  }
+});
 
 app.listen(4000);
