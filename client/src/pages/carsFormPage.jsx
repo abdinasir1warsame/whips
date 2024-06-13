@@ -5,6 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AccountNav from "../components/accounts/accountNav";
 import { Navigate, useParams } from "react-router-dom";
+import '../components/accounts/accounts.css'
 
 
 const CarsFormPage = () => {
@@ -68,75 +69,67 @@ setSpecifications(data.specifications)
     return (
         <div className="pt-8 bg-gray min-h-screen"> 
           <AccountNav/>
-                   <form onSubmit={saveCar} className="form-section mt-12">
-                <div className="form-container text-shadow">
-<div className="flex flex row space-x-4 mt-3 ">
-  <div className="flex flex-col justify-around  ">
-  <h1 className="mb-6 text-lg font-semibold">Make</h1>
-  <h1 className="mb-6 text-lg font-semibold">doors</h1>
-  
-  <h1 className="mb-6 text-lg font-semibold">Deposit</h1>
- 
-  </div>
-  <div className="flex flex-col "><input value={make} onChange={ev => setMake(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="make, for example: BMW" />
-  <input value={doors} onChange={ev => setDoors(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="doors, for example: 5 doors" />
- 
-  <input value={deposit} onChange={ev => setDeposit(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="deposit, for example:£500 " />
-   </div>
-  
-  <div className="flex flex-col justify-around h-2/3">
-  <h1 className="mb-6 text-lg font-semibold">Model</h1>
-  <h1 className="mb-6 text-lg font-semibold">seats</h1>
-  
- 
-  </div>
-  <div className="flex flex-col"> <input value={model} onChange={ev => setModel(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="brand, for example: 3 series" />
-     <input value={seats} onChange={ev => setSeats(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="seats, for example: 4 seats" />
-    
+                   <form onSubmit={saveCar} className="car-form-section mt-12">
+                <div className="car-form-container text-shadow">
+                <div class="car-input-container">
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Make</h1></div>
+        <div class="car-input-field">
+        <input value={make} onChange={ev => setMake(ev.target.value)} className="car-input" type="text" placeholder="make, for example: BMW" />
+        </div>
+    </div>
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Model</h1></div>
+        <div class="car-input-field">
+        <input value={model} onChange={ev => setModel(ev.target.value)} className="car-input " type="text" placeholder="brand, for example: 3 series" />
+        </div>
+    </div>
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Deposit</h1></div>
+        <div class="car-input-field">
+        <input value={deposit} onChange={ev => setDeposit(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="deposit, for example:£500 " />
+        </div>
+    </div>
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Type</h1></div>
+        <div class="car-input-field">
+        <input value={type} onChange={ev => setType(ev.target.value)} className="car-input" type="text" placeholder="body, for example: saloon" />
+        </div>
+    </div>
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Doors</h1></div>
+        <div class="car-input-field">
+        <input value={doors} onChange={ev => setDoors(ev.target.value)} className=" " type="text" placeholder="doors, for example: 5 doors" />
+        </div>
+    </div>
    
-     </div>
-     <div className="flex flex-col justify-around h-2/3 ">
-     <h1 className="mb-6 text-lg font-semibold">type</h1>
-     <h1 className="mb-6 text-lg font-semibold">Daily Price</h1>
- 
-  </div>
-  <div className="flex flex-col ">
-  <input value={type} onChange={ev => setType(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="body, for example: saloon" />
-  <input value={daily} onChange={ev => setDaily(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-6" type="text" placeholder="daily price, for example: £50" />
-   </div>
+   
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Seats</h1></div>
+        <div class="car-input-field">
+        <input value={seats} onChange={ev => setSeats(ev.target.value)} className=" " type="text" placeholder="seats, for example: 4 seats" />
+        </div>
+    </div>
+    <div class="car-input-item">
+        <div class="car-input-label"><h1>Price</h1></div>
+        <div class="car-input-field">
+        <input value={daily} onChange={ev => setDaily(ev.target.value)} className=" " type="text" placeholder="daily price, for example: £50" />
+        </div>
+    </div>
+  
 </div>
 
 
-  {/* <h1 className="mb-4 text-lg font-semibold">Make</h1>
-
-      <input value={make} onChange={ev => setMake(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="make, for example: BMW" />
-      <h1 className="mb-4 text-lg font-semibold">Model</h1>
-                    <input value={model} onChange={ev => setModel(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="brand, for example: 3 series" />
-                    <h1 className="mb-4 text-lg font-semibold">doors</h1>
-                    <input value={doors} onChange={ev => setDoors(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="doors, for example: 5 doors" />
-                    <h1 className="mb-4 text-lg font-semibold">seats</h1>
-                    <input value={seats} onChange={ev => setSeats(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="seats, for example: 4 seats" />
-                    <h1 className="mb-4 text-lg font-semibold">type</h1>
-                    <input value={type} onChange={ev => setType(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="body, for example: saloon" />
-                    <h1 className="mb-4 text-lg font-semibold">Daily Price</h1>
-                    <input value={daily} onChange={ev => setDaily(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="daily price, for example: £50" />
-                    <h1 className="mb-4 text-lg font-semibold">Deposit</h1>
-                 <input value={deposit} onChange={ev => setDeposit(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="deposit, for example:£500 " /> */}
-                 
 
 
+  
                   
                 <PhotosUploader addedPhotos={addedPhotos} onChange={setAddedPhotos}/>
                     <h1 className="mt-4 mb-1 text-lg font-semibold" >Specifications</h1>
                     <p className="gray-500 text-sm mb-4 ">Select All the Specifications</p>
                  <Specifications selected={specifications} onChange={setSpecifications}></Specifications>
-                    {/* <h1 className="mt-4 mb-1 text-lg font-semibold" >pick up & drop off times</h1>
-                    <p className="gray-500 text-sm mb-4 ">Make sure to return car on specified time</p>
-                    <div className="time-container">
-                    <div> <h3 className="mb-2">Pick up time</h3>  <input value={pickup} onChange={ev => setPickup(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="16:00" /></div>
-                    <div>  <h3 className="mb-2">Drop off time</h3>  <input value={dropoff} onChange={ev => setDropoff(ev.target.value)} className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="16:00" /></div>
-                    </div> */}
-                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn3 px-4 w-1/3 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Car</button></div>
+            
+                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn2 px-4 car-form-btn h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Car</button></div>
                    
                     </div>
 

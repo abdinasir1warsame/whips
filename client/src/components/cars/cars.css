@@ -313,3 +313,19 @@ button {
   color: #fff;
   width: 300px;
 }
+@media screen and (max-width: 768px) {
+  .device {
+    width: 375px;
+    height: 100%;
+    border-radius: 30px;
+    box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);
+    margin-left: 0rem;
+  }
+  .form-container {
+    min-width: 50vh;
+  }
+}

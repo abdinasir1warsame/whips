@@ -9,7 +9,7 @@
 }
 .options {
   width: 30%;
-  height: 100%;
+  min-height: 40vh;
   margin-top: 5rem;
   margin-bottom: 5rem;
   padding-top: 1.75rem;
@@ -32,7 +32,7 @@
   }
   .options {
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-top: 2rem;
@@ -47,7 +47,7 @@
 @media screen and (max-width: 410px) {
   .options {
     width: 100%;
-    height: 50vh;
+    min-height: 50vh;
     margin-top: 1rem;
     margin-bottom: 1rem;
     padding-top: 2rem;

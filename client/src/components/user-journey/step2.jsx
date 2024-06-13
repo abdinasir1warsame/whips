@@ -8,7 +8,7 @@ const StepTwo = () => {
     return (
       <div className="dark:bg-dark  sm:min-h-[300px] sm:grid sm:place-items-center duration-300 ">
       <div className="sm:container">
-      <div className="sm:grid grid-cols-1 sm:grid-cols-2 place-items-center sm:flex sm:flex-row-reverse py-8 text-lg">
+      <div className="sm:grid grid-cols-1 sm:grid-cols-2 place-items-center sm:flex sm:flex-row-reverse px-2 py-8 text-lg">
   <div data-aos="slide-right" data-aos-duration="1500" className="order-2 sm:order-1">
     <img
       src={CarPng}

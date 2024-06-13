@@ -27,6 +27,15 @@ app.use(
 
 mongoose.connect(process.env.MONGO_URL);
 
+function getUserDataFromReq(req) {
+  return new Promise((resolve, reject) => {
+    jwt.verify(req.cookies.token, jwtSecret, {}, async (err, userData) => {
+      if (err) throw err;
+      resolve(userData);
+    });
+  });
+}
+
 app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
 
@@ -230,7 +239,9 @@ app.get('/cars', async (req, res) => {
   res.json(await Car.find());
 });
 app.post('/bookings', async (req, res) => {
-  const { car, pickUp, dropOff, name, phone, email, price } = req.body;
+  const userData = await getUserDataFromReq(req);
+  const { carOwner, car, pickUp, dropOff, name, phone, email, price } =
+    req.body;
   const bookingDoc = await Booking.create({
     car,
     pickUp,
@@ -239,38 +250,15 @@ app.post('/bookings', async (req, res) => {
     email,
     phone,
     price,
+    carOwner,
+    user: userData.id,
   });
   res.json(bookingDoc);
 });
-app.get('/cars/filter', async (req, res) => {
-  try {
-    const { make, model, priceRange } = req.query;
 
-    // Build the query object
-    let query = {};
-
-    if (make) {
-      query.make = make;
-    }
-
-    if (model) {
-      query.model = model;
-    }
-
-    if (priceRange) {
-      const [min, max] = priceRange.split('-').map(Number);
-      query.daily = { $gte: min, $lte: max };
-    }
-
-    // Query the database with the built query object
-    const cars = await Car.find(query);
-
-    res.json(cars);
-  } catch (e) {
-    res
-      .status(500)
-      .json({ message: 'Internal server error', error: e.message });
-  }
+app.get('/bookings', async (req, res) => {
+  const userData = await getUserDataFromReq(req);
+  res.json(await Booking.find({ user: userData.id }).populate('car'));
 });
 
 app.listen(4000);

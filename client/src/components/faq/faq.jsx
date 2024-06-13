@@ -43,7 +43,7 @@ const ChevronDownIcon = () => (
 
 const Faq = () => {
   return (
-    <div className='mt-40 h-screen'>
+    <div className='mt-20 mb-20 min-h-screen flex flex-col justify-center items-center '>
                    <div className="space-y-4 pb-12 ">
             <p
               data-aos="fade-up"

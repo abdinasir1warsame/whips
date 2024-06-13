@@ -8,7 +8,7 @@ const StepThree = () => {
     return (
 <div className="dark:bg-dark bg-slate-100 sm:min-h-[300px] rounded-2xl sm:grid sm:place-items-center duration-300">
   <div className="sm:container">
-    <div className="grid grid-cols-1 sm:grid-cols-2  place-items-center py-8 text-lg ">
+    <div className="grid grid-cols-1 sm:grid-cols-2  place-items-center px-2 py-8 text-lg ">
    
       <div className="order-2 md:order-1">
         <div className="space-y-10 sm:p-16 pb-6">

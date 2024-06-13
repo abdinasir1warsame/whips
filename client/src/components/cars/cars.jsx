@@ -62,7 +62,8 @@ const Cars = () => {
 
   return (
     <div>
-      <CarFilter onFilterChange={handleFilterChange} />
+     <CarFilter cars={cars} onFilterChange={handleFilterChange} />
+
       <div className="my-car-section">
         <div className="my-cars-container">
           {filteredCars.length > 0 ? (

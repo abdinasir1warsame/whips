@@ -60,7 +60,7 @@ async function logout () {
                     <input  className=" border border-gray-300 rounded-full px-4 py-2 mb-4" type="text" placeholder="doors, for example: 5 doors" />
              
               
-                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn3 px-4 w-1/2 h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Details</button></div>
+                    <div className=" flex flex-row justify-center"> <button type="submit" className="background-btn2 px-4 car-form-btn h-3/5 text-xl mt-10 mb-10 rounded-full" > Save Details</button></div>
                    
                     </div>
 

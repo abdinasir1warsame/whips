@@ -1,0 +1,92 @@
+.booking-image-overlay {
+  position: absolute;
+  width: calc(100%);
+
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      rgba(37, 63, 84, 1) 8%,
+      /* Adjust opacity here */ rgba(20, 43, 61, 1) 30%,
+      /* Adjust opacity here */ rgba(20, 43, 61, 1) 40%,
+      /* Adjust opacity here */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      rgba(72, 94, 114, 1) 8%,
+      /* Adjust opacity here */ rgba(62, 81, 98, 1) 25%,
+      /* Adjust opacity here */ rgba(29, 61, 85, 1) 62.5%,
+      /* Adjust opacity here */ rgba(29, 61, 85, 1) 100%
+        /* Adjust opacity here */
+    );
+  backdrop-filter: blur(6px);
+  border-radius: 30px;
+
+  text-shadow: 0 2px 4px rgba(1, 1, 1, 0.375);
+  opacity: 0.9; /* Set the entire element's opacity */
+}
+.bookings-img {
+  min-width: 100%;
+
+  position: relative;
+
+  background-size: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.727);
+  border-radius: 30px;
+  background-repeat: no-repeat;
+}
+.all-bookings-section {
+  padding-top: 32px;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  min-height: 100vh;
+}
+.all-bookings-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  width: 70%;
+  margin-top: 100px;
+  gap: 50px;
+}
+
+.all-bookings-container > * {
+  flex-basis: calc(
+    50% - 25px
+  ); /* Each item takes 50% of the width minus half the gap to accommodate for two items per row */
+  margin-bottom: 50px; /* Adds spacing between rows */
+}
+.all-booking-name {
+  font-size: 20px;
+}
+.all-booking-dates {
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .booking-image-overlay {
+    width: calc(100%);
+  }
+  .all-bookings-section {
+    padding-top: 32px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .all-bookings-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    width: 90%;
+    gap: 70px;
+    margin-bottom: 20px;
+  }
+  .all-booking-name {
+    font-size: 16px;
+  }
+  .all-booking-dates {
+    font-size: 7px;
+  }
+}

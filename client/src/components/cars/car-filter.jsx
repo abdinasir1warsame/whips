@@ -1,31 +1,26 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import "./car-filter.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import axios from 'axios';
 
-const CarFilter = ({ onFilterChange }) => {
-  const [cars, setCars] = useState([]);
+const CarFilter = ({ cars, onFilterChange }) => {
+
+  
   const [selectedMake, setSelectedMake] = useState('');
   const [selectedModel, setSelectedModel] = useState('');
   const [selectedPrice, setSelectedPrice] = useState('');
   const [models, setModels] = useState([]);
 
-  useEffect(() => {
-    axios.get("/cars").then((response) => {
-      setCars(response.data);
-    });
-  }, []);
-
   const handleMakeChange = (event) => {
     const selectedMake = event.target.value;
     setSelectedMake(selectedMake);
 
-    // Filter models based on selected make
+    
     const filteredModels = cars
       .filter(car => car.make === selectedMake)
       .map(car => car.model);
 
-    // Ensure models are unique
+   
     setModels([...new Set(filteredModels)]);
     setSelectedModel(''); // Reset model selection when make changes
 
@@ -47,17 +42,17 @@ const CarFilter = ({ onFilterChange }) => {
     onFilterChange({ make: selectedMake, model: selectedModel, price: event.target.value });
   };
 
-  // Extract unique makes for the make dropdown
+  // Extract unique makes for the make dropdown using the cars prop
   const uniqueMakes = [...new Set(cars.map(car => car.make))];
 
   return (
-    <div className="flex justify-center px-10 mb-10 mt-20 ">
-      <div className='flex justify-center background max-w-[110%] gap-3 py-4 px-12 shadow shadow-black shadow-lg rounded-xl'>    
+    <div className="filter-section flex justify-center mb-5 mt-10">
+      <div className='filter-container flex justify-around background w-1/3 gap-3 py-4 shadow shadow-black shadow-lg rounded-xl'>
         {/* Make Filter */}
         <div className="flex items-center space-x-2">
           <select
             id="make"
-            className="w-40 p-2 rounded-md bg-white text-black text-lg"
+            className="filter-select p-2 rounded-md bg-white text-black"
             value={selectedMake}
             onChange={handleMakeChange}
           >
@@ -68,12 +63,12 @@ const CarFilter = ({ onFilterChange }) => {
             ))}
           </select>
         </div>
-  
+
         {/* Model Filter */}
         <div className="flex items-center space-x-2">
           <select
             id="model"
-            className="w-40 p-2 rounded-md bg-white text-black text-lg"
+            className="filter-select p-2 rounded-md bg-white text-black"
             value={selectedModel}
             onChange={handleModelChange}
             disabled={!selectedMake} // Disable until a make is selected
@@ -85,12 +80,12 @@ const CarFilter = ({ onFilterChange }) => {
             ))}
           </select>
         </div>
-  
+
         {/* Price Filter */}
         <div className="flex items-center space-x-2">
           <select
             id="price"
-            className="w-40 p-2 space-y-10 rounded-md bg-white text-black text-lg"
+            className="filter-select p-2 space-y-10 rounded-md bg-white text-black"
             value={selectedPrice}
             onChange={handlePriceChange}
           >
@@ -102,11 +97,10 @@ const CarFilter = ({ onFilterChange }) => {
             <option value="over-250">Over £250/day</option>
           </select>
         </div>
-  
-   
       </div>
     </div>
   );
 };
 
 export default CarFilter;
+

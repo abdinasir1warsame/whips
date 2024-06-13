@@ -1,0 +1,32 @@
+.filter-container {
+  padding-left: 48px;
+  padding-right: 48px;
+  min-width: 44%;
+}
+
+.filter-section {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+.filter-select {
+  width: 160px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+  .filter-container {
+    padding-left: 24px;
+    padding-right: 24px;
+    min-width: 90%;
+  }
+
+  .filter-section {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .filter-select {
+    width: 80px;
+    margin-left: 5px;
+    font-size: 15px;
+  }
+}

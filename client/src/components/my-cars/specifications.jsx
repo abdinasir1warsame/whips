@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import './specifications.css'
 
 const Specifications = ({ selected, onChange }) => {
   const handleOptionChange = (category, value) => {
@@ -14,9 +15,9 @@ const Specifications = ({ selected, onChange }) => {
 
   return (
     <div className="specification-container mb-4 ">
-      <div>
+      <div >
         <h3 className="mb-4">Gear Box</h3>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="automatic">
+        <label  className=" border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="automatic">
           <input
             type="radio"
             id="automatic"
@@ -41,7 +42,7 @@ const Specifications = ({ selected, onChange }) => {
       </div>
       <div>
          <h3 className="mb-4">Fuel Type</h3>
-        <label  className="border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="diesel">
+        <label  className=" border border-gray-300  rounded-full px-4 py-2 mb-4 mr-5 background-btn3 " htmlFor="diesel">
           <input
             type="radio"
             id="diesel"
