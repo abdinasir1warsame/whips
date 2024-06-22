@@ -40,39 +40,75 @@ app.post('/signup', async (req, res) => {
   const { name, email, password } = req.body;
 
   try {
+    // Basic validation
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: 'All fields are required.' });
+    }
+
+    // Check if user already exists
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return res
+        .status(409)
+        .json({ message: 'User with this email already exists.' });
+    }
+
+    // Create new user
+    const hashedPassword = bcrypt.hashSync(password, bcryptSalt);
     const userDoc = await User.create({
       name,
       email,
-      password: bcrypt.hashSync(password, bcryptSalt),
+      password: hashedPassword,
     });
 
-    res.json({ userDoc });
+    res.status(201).json({ user: userDoc });
   } catch (e) {
-    res.status(422).json(e);
+    console.error(e);
+    res
+      .status(500)
+      .json({ message: 'Registration failed, please try again later.' });
   }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send({ message: 'Something broke!' });
 });
 
 app.post('/login', async (req, res) => {
   const { email, password } = req.body;
-  const userDoc = await User.findOne({ email });
-  if (userDoc) {
-    const passOk = bcrypt.compareSync(password, userDoc.password);
-    if (passOk) {
-      jwt.sign(
-        { email: userDoc.email, id: userDoc._id },
-        jwtSecret,
-        {},
-        (err, token) => {
-          if (err) throw err;
-          res.cookie('token', token).json(userDoc);
-        }
-      );
-    } else {
-      res.json('password not ok');
+
+  try {
+    const userDoc = await User.findOne({ email });
+    if (!userDoc) {
+      return res.status(422).json({ message: 'User not found.' });
     }
-  } else {
-    res.status(422).json('user not found');
+
+    const passOk = bcrypt.compareSync(password, userDoc.password);
+    if (!passOk) {
+      return res.status(401).json({ message: 'Incorrect password.' });
+    }
+
+    jwt.sign(
+      { email: userDoc.email, id: userDoc._id },
+      jwtSecret,
+      {},
+      (err, token) => {
+        if (err) throw err;
+        res.cookie('token', token).json(userDoc);
+      }
+    );
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ message: 'Login failed, please try again later.' });
   }
+});
+
+// Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send({ message: 'Something broke!' });
 });
 
 app.get('/profile', (req, res) => {
