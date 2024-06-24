@@ -38,11 +38,15 @@ const Signup = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post('/signup', {
-        name,
-        email,
-        password,
-      });
+      const response = await axios.post(
+        '/signup',
+        {
+          name,
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
       alert('Registration successful, now you can log in.');
       navigate('/login'); // Navigate to the /login route after successful registration
     } catch (e) {
