@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from '../my-cars/image';
 
 const Gallery = ({ car }) => {
   const [showAllPhotos, setShowAllPhotos] = useState(false);
@@ -33,7 +34,7 @@ const Gallery = ({ car }) => {
         {car?.photo?.length > 0 &&
           car.photo.map((photo) => (
             <div className="p-8 pt-0 flex bg-black ">
-              <img src={'http://localhost:4000/uploads/' + photo} alt="" />
+              <Image src={photo} alt="" />
             </div>
           ))}
       </div>
@@ -47,9 +48,9 @@ const Gallery = ({ car }) => {
             {car.photo?.[0] && (
               <div className="">
                 {' '}
-                <img
+                <Image
                   className="w-full shadow h-full object-cover"
-                  src={'http://localhost:4000/uploads/' + car.photo[0]}
+                  src={car.photo[0]}
                   alt=""
                 />
               </div>
@@ -58,18 +59,14 @@ const Gallery = ({ car }) => {
           <div className="  w-1/3 h-2/3">
             <div className="h-1/2  ">
               {car.photo?.[1] && (
-                <img
-                  className="w-full h-full"
-                  src={'http://localhost:4000/uploads/' + car.photo[1]}
-                  alt=""
-                />
+                <Image className="w-full h-full" src={car.photo[1]} alt="" />
               )}
             </div>
             <div className="h-1/2 overflow-hidden">
               {car.photo?.[2] && (
-                <img
+                <Image
                   className="w-full h-full  relative third-img "
-                  src={'http://localhost:4000/uploads/' + car.photo[2]}
+                  src={car.photo[2]}
                   alt=""
                 />
               )}

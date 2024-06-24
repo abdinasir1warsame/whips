@@ -1,3 +1,4 @@
+import Image from '../my-cars/image';
 const CarImg = ({ car, index = 0, className = null }) => {
   if (!car.photo?.length) {
     return '';
@@ -8,11 +9,7 @@ const CarImg = ({ car, index = 0, className = null }) => {
 
   return (
     <>
-      <img
-        className={className}
-        src={'http://localhost:4000/uploads/' + car.photo[index]}
-        alt=""
-      />
+      <Image className={className} src={car.photo[index]} alt="" />
     </>
   );
 };
