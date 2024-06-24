@@ -62,7 +62,7 @@ function getUserDataFromReq(req) {
   });
 }
 
-app.post('/api/signup', async (req, res) => {
+app.post('/signup', async (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
   const { name, email, password } = req.body;
 
@@ -104,7 +104,7 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: 'Something broke!' });
 });
 
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   try {
     // Ensure MONGO_URL is set and accessible
     if (!process.env.MONGO_URL) {
@@ -157,7 +157,7 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: 'Something broke!' });
 });
 
-app.get('/api/profile', (req, res) => {
+app.get('/profile', (req, res) => {
   mongoose.connect(process.env.MONGO_URL);
   const { token } = req.cookies;
   if (token) {
