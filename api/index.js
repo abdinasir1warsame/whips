@@ -18,12 +18,15 @@ const jwt = require('jsonwebtoken');
 require('dotenv').config();
 const app = express();
 app.use(cookieParser());
+
+mongoose.connect(process.env.MONGO_URL);
+
 app.use('/uploads', express.static(__dirname + '/uploads'));
 app.use(express.json());
 app.use(
   cors({
     credentials: true,
-    origin: 'https://whips-rental.vercel.app',
+    origin: 'http://localhost:5173',
   })
 );
 
@@ -102,10 +105,19 @@ app.use((err, req, res, next) => {
 });
 
 app.post('/api/login', async (req, res) => {
-  mongoose.connect(process.env.MONGO_URL);
-  const { email, password } = req.body;
-
   try {
+    // Ensure MONGO_URL is set and accessible
+    if (!process.env.MONGO_URL) {
+      throw new Error('MONGO_URL is not set in the environment variables.');
+    }
+
+    await mongoose.connect(process.env.MONGO_URL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+
+    const { email, password } = req.body;
+
     const userDoc = await User.findOne({ email });
     if (!userDoc) {
       return res.status(422).json({ message: 'User not found.' });
@@ -121,13 +133,20 @@ app.post('/api/login', async (req, res) => {
       jwtSecret,
       {},
       (err, token) => {
-        if (err) throw err;
+        if (err) {
+          console.error('JWT signing error:', err);
+          return res
+            .status(500)
+            .json({ message: 'Login failed, please try again later.' });
+        }
         res.cookie('token', token).json(userDoc);
       }
     );
   } catch (e) {
-    console.error(e);
+    console.error('Login error:', e);
     res.status(500).json({ message: 'Login failed, please try again later.' });
+  } finally {
+    mongoose.connection.close();
   }
 });
 
