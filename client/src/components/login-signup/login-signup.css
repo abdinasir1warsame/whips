@@ -1,0 +1,300 @@
+.login-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  flex-wrap: wrap; /* Wrap items onto new lines */
+  height: 95vh;
+  padding: 30px 0;
+  background-color: white;
+}
+
+.log-in-side {
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #253f54 8%,
+      /* Light Admiral Blue */ #142b3d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #485e72 8%,
+      /* Light Admiral Blue */ #3e5162 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
+
+  height: 600px;
+  width: 450px;
+  box-shadow: 0px 0px 24px #85bbf1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  color: white;
+  text-align: center;
+}
+.message-box h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
+}
+.message-box h3 {
+  margin-bottom: 50px;
+  font-size: 20px;
+  padding-right: 30px;
+  padding-left: 30px;
+  text-shadow: 0 8px 16px rgba(1, 1, 1, 0.686);
+}
+.message-box p {
+  margin-bottom: 20px;
+  text-align: start;
+  padding-right: 40px;
+  padding-left: 40px;
+  font-size: 17px;
+  text-shadow: 0 2px 4px rgba(1, 1, 1, 0.686);
+}
+.screen {
+  background: radial-gradient(circle, #44637d 2%, #142b3d 64%);
+  position: relative;
+  height: 600px;
+  width: 360px;
+  box-shadow: 0px 0px 24px #85bbf1;
+}
+
+.screen__content {
+  z-index: 99;
+  position: relative;
+  height: 100%;
+}
+
+.screen__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  -webkit-clip-path: inset(0 0 0 0);
+  clip-path: inset(0 0 0 0);
+}
+
+.screen__background__shape {
+  transform: rotate(45deg);
+  position: absolute;
+}
+
+.screen__background__shape1 {
+  height: 520px;
+  width: 520px;
+  background: #fff;
+  top: -50px;
+  right: 120px;
+  border-radius: 0 72px 0 0;
+}
+
+.screen__background__shape2 {
+  height: 220px;
+  width: 220px;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #44637d 8%,
+      /* Light Admiral Blue */ #2a475d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      /* Light Admiral Blue */ #526a80 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
+  top: -172px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape3 {
+  height: 540px;
+  width: 190px;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #44637d 8%,
+      /* Light Admiral Blue */ #2a475d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      /* Light Admiral Blue */ #526a80 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
+
+  top: -24px;
+  right: 0;
+  border-radius: 32px;
+}
+
+.screen__background__shape4 {
+  height: 400px;
+  width: 200px;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #44637d 8%,
+      /* Light Admiral Blue */ #2a475d 30%,
+      /* Medium Admiral Blue */ #142b3d 40%,
+      /* Dark Admiral Blue */ transparent 80%
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #768a9d 8%,
+      /* Light Admiral Blue */ #526a80 25%,
+      /* Medium Admiral Blue */ #1d3d55 62.5%,
+      /* Dark Admiral Blue */ #1d3d55 100%
+    );
+
+  top: 420px;
+  right: 50px;
+  border-radius: 60px;
+}
+
+.login {
+  width: 320px;
+  padding: 30px;
+  padding-top: 156px;
+}
+.signup {
+  width: 320px;
+  padding: 30px;
+  padding-top: 100px;
+}
+.login__field {
+  padding: 20px 0px;
+  position: relative;
+}
+
+.login__icon {
+  position: absolute;
+  top: 30px;
+  color: #72b8f2;
+}
+
+.login__input {
+  border: none;
+  border-bottom: 2px solid #d1d1d4;
+  background: none;
+  padding: 10px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 75%;
+  transition: 0.2s;
+}
+
+.login__input:active,
+.login__input:focus,
+.login__input:hover {
+  outline: none;
+  border-bottom-color: #0461a9;
+}
+.form-question {
+  max-width: 75%;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.8;
+  color: white;
+  text-shadow: 0 8px 16px rgba(12, 4, 4, 0.686);
+  font-weight: bolder;
+  cursor: pointer;
+}
+.login-q {
+  margin-top: 20px;
+  margin-left: 90px;
+}
+.login__submit {
+  background: #fff;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #0461a9;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: black;
+  box-shadow: 0px 2px 2px #0461a9;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.login__submit:active,
+.login__submit:focus,
+.login__submit:hover {
+  /* 	border-color: #53e3a6; */
+  color: #fff;
+  background: radial-gradient(
+      ellipse farthest-corner at right bottom,
+      #3d6a9b 0%,
+      /* Darker Blue */ #295683 15%,
+      /* Dark Blue */ #1a3b58 30%,
+      /* Even Darker Blue */ #1e4768 45%,
+      /* Dark Blue */ #2a4e76 60%,
+      /* Blue */ #1d3e5d 75% /* Dark Blue */
+    ),
+    radial-gradient(
+      ellipse farthest-corner at left top,
+      #ffffff 0%,
+      /* White */ #b3d7ff 15%,
+      /* Light Blue */ #6691bb 30%,
+      /* Slightly darker */ #4c7da3 45%,
+      /* Darker */ #a7bed4 60%,
+      /* Main Color */ #c7ccd2 75% /* Main Color */
+    );
+  outline: none;
+  box-shadow: none;
+  border: white;
+}
+.button__icon {
+  font-size: 24px;
+  margin-left: auto;
+}
+
+.button__icon {
+  font-size: 24px;
+  margin-left: auto;
+  color: #7875b5;
+}
+
+.social-login {
+  position: absolute;
+  height: 140px;
+  width: 160px;
+  text-align: center;
+  bottom: 0px;
+  right: 0px;
+  color: #fff;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-login__icon {
+  padding: 20px 10px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0px 0px 8px #7875b5;
+}
+
+.social-login__icon:hover {
+  transform: scale(1.5);
+}

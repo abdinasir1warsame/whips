@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .background-btn {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #13294b 8%,
+        /* dark blue */ #1a3c63 30%,
+        /* medium blue */ #1e4a7a 40%,
+        /* light blue */ transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #13294b 8%,
+        /* dark blue */ #1a3c63 30%,
+        /* medium blue */ #4d83b5 62.5%,
+        /* light blue */ #1a3c63 100% /* medium blue */
+      );
+
+    color: white;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.685);
+
+    text-shadow: 0 8px 16px rgba(10, 10, 10, 0.991);
+  }
+  .background-btn2 {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #3d6a9b 0%,
+        /* Darker Blue */ #295683 15%,
+        /* Dark Blue */ #1a3b58 30%,
+        /* Even Darker Blue */ #1e4768 45%,
+        /* Dark Blue */ #2a4e76 60%,
+        /* Blue */ #1d3e5d 75% /* Dark Blue */
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        /* White */ #b3d7ff 15%,
+        /* Light Blue */ #6691bb 30%,
+        /* Slightly darker */ #4c7da3 45%,
+        /* Darker */ #a7bed4 60%,
+        /* Main Color */ #c7ccd2 75% /* Main Color */
+      );
+    color: white;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.643);
+
+    text-shadow: 0 8px 16px rgba(10, 10, 10, 0.991);
+  }
+  .background-btn3 {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #3d6a9b 0%,
+        /* Darker Blue */ #295683 15%,
+        /* Dark Blue */ #2d6290 30%,
+        /* Even Darker Blue */ #5184b9 45%,
+        /* Dark Blue */ #3a699f 60%,
+        /* Lighter Blue */ #5184b9 75% /* Lighter Blue */
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        /* White */ #b3d7ff 15%,
+        /* Light Blue */ #7bb7d7 30%,
+        /* Slightly lighter */ #9ac8e0 45%,
+        /* Lighter */ #d5e7f5 60%,
+        /* Main Color */ #eaf1f7 75% /* Main Color */
+      );
+    color: white;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.643);
+
+    text-shadow: 0 8px 16px rgba(10, 10, 10, 0.991);
+  }
+  .background {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #142b3d 8%,
+        #102331 30%,
+        #142b3d 40%,
+        transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #768a9d 8%,
+        #526a80 25%,
+        #1d3d55 62.5%,
+        #1d3d55 100%
+      );
+    color: white;
+
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.643);
+
+    text-shadow: 0 8px 16px rgba(10, 10, 10, 0.991);
+  }
+
+  .text-shadow {
+    text-shadow: 0 4px 8px rgba(10, 10, 10, 0.492);
+  }
+  .form-section input {
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.234);
+  }
+  .bg-gray {
+    background-color: #dedfe0;
+  }
+  .text-color {
+    color: transparent;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #79aeda 8%,
+        /* Light Admiral Blue */ #7894a8 30%,
+        /* Medium Admiral Blue */ #1f4460 40%,
+        /* Dark Admiral Blue */ transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #7ba6ce 8%,
+        /* Light Admiral Blue */ #7597b6 25%,
+        /* Medium Admiral Blue */ #7196b1 62.5%,
+        /* Dark Admiral Blue */ #37668b 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .text-color2 {
+    color: transparent;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #79aeda 8%,
+        /* Light Admiral Blue */ #193d57 30%,
+        /* Medium Admiral Blue */ #1f4460 40%,
+        /* Dark Admiral Blue */ transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #7ba6ce 8%,
+        /* Light Admiral Blue */ #36526d 25%,
+        /* Medium Admiral Blue */ #7196b1 62.5%,
+        /* Dark Admiral Blue */ #37668b 100%
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .text-color3 {
+    color: transparent;
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #3d6a9b 0%,
+        /* Darker Blue */ #295683 15%,
+        /* Dark Blue */ #2d6290 30%,
+        /* Even Darker Blue */ #5184b9 45%,
+        /* Dark Blue */ #3a699f 60%,
+        /* Lighter Blue */ #5184b9 75% /* Lighter Blue */
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #ffffff 0%,
+        /* White */ #b3d7ff 15%,
+        /* Light Blue */ #7bb7d7 30%,
+        /* Slightly lighter */ #9ac8e0 45%,
+        /* Lighter */ #d5e7f5 60%,
+        /* Main Color */ #eaf1f7 75% /* Main Color */
+      );
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+  .outline {
+    background: radial-gradient(
+        ellipse farthest-corner at right bottom,
+        #79aeda 8%,
+        /* Light Admiral Blue */ #193d57 30%,
+        /* Medium Admiral Blue */ #1f4460 40%,
+        /* Dark Admiral Blue */ transparent 80%
+      ),
+      radial-gradient(
+        ellipse farthest-corner at left top,
+        #7ba6ce 8%,
+        /* Light Admiral Blue */ #36526d 25%,
+        /* Medium Admiral Blue */ #7196b1 62.5%,
+        /* Dark Admiral Blue */ #37668b 100%
+      );
+  }
+  .line-mf3 {
+    width: 50vw;
+    height: 6px;
+    background: linear-gradient(to right, #7ba6ce00, #37668b, #7ba6ce00);
+    margin: 0 auto;
+    margin-top: 1.5rem;
+  }
+  .link {
+    @apply flex flex-col justify-center font-bold text-4xl sm:text-lg cursor-pointer;
+  }
+  .button-outline {
+    @apply rounded-md border-2 border-[#7196b1] hover:background-btn3 hover:text-white  duration-500 py-2 px-6  tracking-wider;
+  }
+  .primary-btn {
+    @apply inline-block rounded-md bg-primary hover:bg-primary/80 transition duration-500 py-2 px-6 text-white;
+  }
+}

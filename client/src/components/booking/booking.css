@@ -1,0 +1,215 @@
+.booking-container {
+  padding: 160px;
+}
+.booking-info {
+  display: flex;
+  flex-direction: row;
+}
+.booking-car-details {
+  width: 66.6666%;
+  margin-top: 20px;
+}
+.booking-widget {
+  width: 33.333%;
+}
+/* car details section */
+/* Container styles */
+.car-details-container {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Three equal-width columns by default */
+  padding: 1rem; /* Equivalent to p-4 in Tailwind */
+  justify-content: center; /* Center the grid within the container */
+  margin-left: 0.5rem; /* Equivalent to ml-2 in Tailwind */
+  gap: 1rem; /* Space between grid items */
+}
+
+.show-more-btn {
+  position: absolute; /* Assuming it's positioned absolutely or relatively */
+  bottom: 0.75rem; /* 12px */
+  right: 0.5rem; /* 8px */
+  padding-top: 0.5rem; /* 8px */
+  padding-bottom: 0.5rem; /* 8px */
+  padding-left: 1rem; /* 16px */
+  padding-right: 1rem; /* 16px */
+  background-color: white;
+  border-radius: 1rem; /* 16px */
+}
+.icon-btn {
+  width: 24px;
+  height: 24px;
+}
+
+/* Info box styles */
+.info-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid white;
+  border-radius: 9999px; /* Equivalent to rounded-full in Tailwind */
+  padding-left: 1rem; /* Equivalent to px-4 in Tailwind */
+  padding-right: 1rem; /* Equivalent to px-4 in Tailwind */
+  padding-top: 0.25rem; /* Equivalent to py-1 in Tailwind */
+  padding-bottom: 0.25rem; /* Equivalent to py-1 in Tailwind */
+  margin-bottom: 1.5rem; /* Equivalent to mb-6 in Tailwind */
+  margin-right: 1.25rem; /* Equivalent to mr-5 in Tailwind */
+  gap: 1.25rem; /* Equivalent to gap-5 in Tailwind */
+}
+
+/* Icon box styles */
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.5rem; /* Equivalent to py-2 in Tailwind */
+  padding-bottom: 0.5rem; /* Equivalent to py-2 in Tailwind */
+  font-size: 1.5rem; /* Equivalent to text-2xl in Tailwind */
+}
+
+/* Info text styles */
+.info-text {
+  display: flex;
+  gap: 1.25rem; /* Equivalent to gap-5 in Tailwind */
+  align-items: center;
+}
+
+/* Info label styles */
+.info-label {
+  font-weight: bold;
+  text-align: center; /* Center text if necessary */
+}
+
+/* Background color classes */
+.background-btn {
+  background-color: #add8e6; /* Example background color */
+}
+
+.background-btn2 {
+  background-color: #ffcccb; /* Example background color */
+}
+.text1 {
+  font-size: 24px;
+}
+.text2 {
+  font-size: 24px;
+}
+.return-btn {
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  border-radius: 1rem;
+
+  font-size: 1.25rem;
+}
+.main-img {
+  margin-right: 12px;
+}
+.third-img {
+  top: 12px;
+}
+/* Media query for medium screens and above */
+@media (max-width: 1100px) {
+  .booking-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .booking-car-details {
+    width: 100%;
+    margin-top: 5px;
+  }
+  .booking-widget {
+    width: 100%;
+  }
+  .booking-container {
+    padding: 20px;
+  }
+  /* car details */
+  /* Container styles */
+  .car-details-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  /* Column styles */
+
+  /* Info box styles */
+  .info-box {
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 9999px; /* Equivalent to rounded-full in Tailwind */
+    padding-left: 8px; /* Equivalent to px-4 in Tailwind */
+    padding-right: 2px; /* Equivalent to px-4 in Tailwind */
+    padding-top: 0rem; /* Equivalent to py-1 in Tailwind */
+    padding-bottom: 0rem; /* Equivalent to py-1 in Tailwind */
+    margin-bottom: 1rem; /* Equivalent to mb-6 in Tailwind */
+    margin-right: 1rem; /* Equivalent to mr-5 in Tailwind */
+    gap: 8px; /* Equivalent to gap-5 in Tailwind */
+    font-size: 10px;
+  }
+
+  /* Icon box styles */
+  .icon-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0.5rem; /* Equivalent to py-2 in Tailwind */
+    padding-bottom: 0.5rem; /* Equivalent to py-2 in Tailwind */
+    font-size: 1rem; /* Equivalent to text-2xl in Tailwind */
+  }
+
+  /* Info text styles */
+  .info-text {
+    display: flex;
+    gap: 0.5rem; /* Equivalent to gap-5 in Tailwind */
+    align-items: center;
+  }
+
+  /* Info label styles */
+  .info-label {
+    font-weight: bold;
+    text-align: center; /* Center text if necessary */
+  }
+  .text1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  .text2 {
+    font-size: 15px;
+    text-align: center;
+  }
+  .return-btn {
+    gap: 0.5rem;
+    padding: 8px 10px 8px 10px;
+    border-radius: 1rem;
+    margin-bottom: 0rem;
+    font-size: 15px;
+  }
+  .show-more-btn {
+    position: absolute; /* Assuming it's positioned absolutely or relatively */
+    bottom: 0.3rem; /* 12px */
+    right: 0.3rem; /* 8px */
+    padding-top: 0.2rem; /* 8px */
+    padding-bottom: 0.2rem; /* 8px */
+    padding-left: 0.2rem; /* 16px */
+    padding-right: 0.2rem; /* 16px */
+    background-color: white;
+    border-radius: 1rem; /* 16px */
+    font-size: 8px;
+  }
+  .icon-btn {
+    width: 14px;
+    height: 14px;
+  }
+  .main-img {
+    margin-right: 5px;
+  }
+  .third-img {
+    top: 5px;
+  }
+}
