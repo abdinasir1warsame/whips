@@ -33,7 +33,11 @@ const Login = () => {
     if (!validateForm()) return;
 
     try {
-      const response = await axios.post('/login', { email, password });
+      const response = await axios.post(
+        '/login',
+        { withCredentials: true },
+        { email, password }
+      );
       setUser(response.data);
       alert('Login successful');
       setRedirect(true);
