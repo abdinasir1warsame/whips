@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import Image from '../my-cars/image';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Gallery = ({ car }) => {
   const [showAllPhotos, setShowAllPhotos] = useState(false);
@@ -46,7 +48,7 @@ const Gallery = ({ car }) => {
         <div className="flex flex-row rounded-2xl overflow-hidden shadow ">
           <div className="w-2/3 h-2/3 main-img">
             {car.photo?.[0] && (
-              <div className="">
+              <div data-aos="slide-right" data-aos-duration="1000" className="">
                 {' '}
                 <Image
                   className="w-full shadow h-full object-cover"
@@ -57,12 +59,20 @@ const Gallery = ({ car }) => {
             )}
           </div>
           <div className="  w-1/3 h-2/3">
-            <div className="h-1/2  ">
+            <div
+              data-aos="slide-down"
+              data-aos-duration="1000"
+              className="h-1/2  "
+            >
               {car.photo?.[1] && (
                 <Image className="w-full h-full" src={car.photo[1]} alt="" />
               )}
             </div>
-            <div className="h-1/2 overflow-hidden">
+            <div
+              data-aos="slide-up"
+              data-aos-delay="100"
+              className="h-1/2 overflow-hidden"
+            >
               {car.photo?.[2] && (
                 <Image
                   className="w-full h-full  relative third-img "

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './mycars.css';
 import AccountNav from '../accounts/accountNav';
 import { getImageUrl } from '../my-cars/image';
@@ -10,8 +11,13 @@ const MyCars = () => {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
+  useEffect(() => {
     axios.get('/user-cars').then(({ data }) => {
       setCars(data);
+      AOS.refresh();
     });
   }, []);
 
@@ -49,14 +55,20 @@ const MyCars = () => {
                 to={'/account/cars/' + car._id}
                 className="my-cars-section"
                 key={car._id}
+                data-aos="fade-up"
               >
                 <div className="device">
                   <section
                     className="headers"
                     style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+                    data-aos="fade-down"
                   >
                     <div className="info">
-                      <div className="info-row">
+                      <div
+                        className="info-row"
+                        data-aos="fade-down"
+                        data-aos-delay="100"
+                      >
                         <div>
                           <h2 className="price">{car.type} </h2>
                         </div>
@@ -67,7 +79,11 @@ const MyCars = () => {
                           <span className="period "></span>
                         </div>
                       </div>
-                      <div className="info-row">
+                      <div
+                        className="info-row"
+                        data-aos="fade-left"
+                        data-aos-delay="200"
+                      >
                         <div className="rating">
                           <small>
                             {car.seats} Seats / {car.doors} Doors
@@ -79,16 +95,25 @@ const MyCars = () => {
                       </div>
                     </div>
                   </section>
-                  <section className="car-data">
+                  <section
+                    className="car-data"
+                    data-aos="fade-up"
+                    data-aos-delay="300"
+                  >
                     <div className="car-name">
                       <h1 className="">{car.make}</h1>
                       <h1 className="">{car.model}</h1>
                     </div>
                     <div className="car-cost">
-                      <h2>£{car.daily}/day</h2> <h2>deposit:{car.deposit}</h2>
+                      <h2>£{car.daily}/day</h2>
+                      <h2>deposit:{car.deposit}</h2>
                     </div>
                   </section>
-                  <section className="confirmation">
+                  <section
+                    className="confirmation"
+                    data-aos="fade-up"
+                    data-aos-delay="400"
+                  >
                     <button type="button" className="main">
                       Edit
                     </button>

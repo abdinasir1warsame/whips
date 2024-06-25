@@ -62,7 +62,11 @@ const CarPage = () => {
           <h1 className="text1 font-bold px-7 mb-2 px-2 text-shadow text-color2">
             Vehicle Summary
           </h1>
-          <div className="car-details-container">
+          <div
+            data-aos="fade-in"
+            data-aos-duration="1000"
+            className="car-details-container"
+          >
             <div className="info-box background-btn">
               <div className="icon-box">
                 <FontAwesomeIcon icon={faCar} />

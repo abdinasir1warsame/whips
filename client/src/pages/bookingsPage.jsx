@@ -2,35 +2,54 @@ import React, { useState, useEffect } from 'react';
 import CarImg from '../components/cars/car-img.jsx';
 import axios from 'axios';
 import AccountNav from '../components/accounts/accountNav';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 import '../components/booking/all-bookings-page.css';
-
 import { Link } from 'react-router-dom';
 import BookingDates from '../components/booking/booking-dates.jsx';
 
 const BookingsPage = () => {
   const [bookings, setBookings] = useState([]);
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   useEffect(() => {
     axios.get('/bookings').then((response) => {
       setBookings(response.data);
+      AOS.refresh();
     });
   }, []);
 
   return (
-    <div className="all-bookings-section bg-gray ">
+    <div className="all-bookings-section bg-gray">
       <AccountNav />
       <div className="flex justify-center items-center">
-        <div className="all-bookings-container     ">
+        <div className="all-bookings-container">
           {bookings?.length > 0 &&
             bookings.map((booking) => (
-              <div className=" all-booking-card">
-                <Link to={`/account/bookings/${booking._id}`} className=" ">
-                  <div className="relative cursor-pointer">
+              <div
+                className="all-booking-card"
+                key={booking._id}
+                data-aos="fade-up"
+              >
+                <Link to={`/account/bookings/${booking._id}`} className="">
+                  <div className="relative cursor-pointer" data-aos="zoom-in">
                     <CarImg car={booking.car} className="bookings-img" />
-                    <div className="booking-image-overlay absolute top-[75%]    rounded-2xl p-4 text-white">
+                    <div
+                      className="booking-image-overlay absolute top-[75%] rounded-2xl p-4 text-white"
+                      data-aos="fade-up"
+                      data-aos-delay="200"
+                    >
                       <div className="flex justify-center pt-2 all-booking-dates font-bold">
                         <BookingDates booking={booking} />
                       </div>
-                      <div className="flex justify-between items-center gap-8 mt-3 px-4 py-2 border-t border-white all-booking-name">
+                      <div
+                        className="flex justify-between items-center gap-8 mt-3 px-4 py-2 border-t border-white all-booking-name"
+                        data-aos="fade-up"
+                        data-aos-delay="400"
+                      >
                         <h2 className="">
                           {booking.car.make} {booking.car.model}
                         </h2>

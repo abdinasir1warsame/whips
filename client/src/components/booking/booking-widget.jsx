@@ -54,11 +54,19 @@ const BookingWidget = ({ car }) => {
   return (
     <>
       <div className="booking-widget bg-white  shadow px-4 rounded-2xl rounded-l-none mt-5 min-h-full  ">
-        <div className="text1 text-center font-bold mt-4 text-shadow text-color">
+        <div
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          className="text1 text-center font-bold mt-4 text-shadow text-color"
+        >
           {' '}
           Price: £{car.daily} / per day{' '}
         </div>
-        <div className="border rounded-2xl mt-4">
+        <div
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          className="border rounded-2xl mt-4"
+        >
           <div className="flex justify-center">
             <div className=" flex flex-col py-3 px-4 ">
               <label>Pick up: </label>
@@ -112,7 +120,11 @@ const BookingWidget = ({ car }) => {
           )}
         </div>
 
-        <div className="flex justify-center  mt-1 ">
+        <div
+          data-aos="fade-in"
+          data-aos-duration="1000"
+          className="flex justify-center  mt-1 "
+        >
           <button
             onClick={bookThisCar}
             className="background-btn2 w-full rounded-2xl h-12 mt-5 mb-5 "

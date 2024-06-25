@@ -219,3 +219,22 @@ button {
 .image-bg {
   min-height: 100vh;
 }
+.my-cars-container {
+  position: relative;
+}
+
+.my-cars-container > div {
+  position: relative;
+  animation: fadeDown 0.5s ease-in-out;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

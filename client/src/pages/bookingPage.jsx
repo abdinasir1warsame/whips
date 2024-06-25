@@ -62,12 +62,20 @@ const BookingPage = () => {
               {' '}
               <Gallery car={booking.car} />
             </div>
-            <div className=" background rounded-2xl rounded-t-none  booking-container-details justify-center items-center ">
+            <div
+              data-aos="fade-down"
+              data-aos-duration="1000"
+              className=" background rounded-2xl rounded-t-none  booking-container-details justify-center items-center "
+            >
               <div className="flex justify-center my-booking-dates font-bold   ">
                 <BookingDates booking={booking} />
               </div>
 
-              <div className="flex justify-around mt-5 my-booking-spec font-bold">
+              <div
+                data-aos="fade-in"
+                data-aos-delay="1000"
+                className="flex justify-around mt-5 my-booking-spec font-bold"
+              >
                 <div className="gap-2">
                   <FontAwesomeIcon icon={faCar} /> : {booking.car.type}
                 </div>
