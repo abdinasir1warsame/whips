@@ -106,7 +106,13 @@ const MyCars = () => {
                     </div>
                     <div className="car-cost">
                       <h2>£{car.daily}/day</h2>
-                      <h2>deposit:{car.deposit}</h2>
+                      <h2>
+                        {' '}
+                        Deposit:{' '}
+                        {car.deposit.startsWith('£')
+                          ? car.deposit
+                          : `£${car.deposit}`}
+                      </h2>
                     </div>
                   </section>
                   <section

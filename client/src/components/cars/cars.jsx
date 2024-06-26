@@ -139,7 +139,12 @@ const Cars = () => {
                       </div>
                       <div className="car-cost">
                         <h2>£{car.daily}/day</h2>
-                        <h2>deposit: {car.deposit}</h2>
+                        <h2 className="text-lg font-semibold">
+                          Deposit:{' '}
+                          {car.deposit.startsWith('£')
+                            ? car.deposit
+                            : `£${car.deposit}`}
+                        </h2>
                       </div>
                     </section>
                     <section className="confirmation">
