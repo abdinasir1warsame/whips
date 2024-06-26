@@ -1,10 +1,11 @@
-import Cars from "../components/cars/cars"
-
+import Cars from '../components/cars/cars';
 
 const AllCars = () => {
-    return (
-    
-   <Cars/>)
-}
+  return (
+    <div className="w-screen">
+      <Cars />
+    </div>
+  );
+};
 
-export default AllCars
+export default AllCars;

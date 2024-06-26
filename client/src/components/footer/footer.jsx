@@ -56,8 +56,8 @@ const Footer = () => {
               Whips
             </h1>
             <p className="">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum in
-              beatae ea recusandae blanditiis veritatis.
+              Experience the freedom of the road with Whips Car Rental - your
+              trusted peer-to-peer car hire service.
             </p>
           </div>
 

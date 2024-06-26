@@ -333,7 +333,7 @@ button {
 }
 @media screen and (max-width: 768px) {
   .device {
-    width: 375px;
+    width: 320px;
     height: 100%;
     border-radius: 30px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.2);

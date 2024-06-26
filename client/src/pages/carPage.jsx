@@ -17,6 +17,7 @@ import Gallery from '../components/booking/gallery';
 const CarPage = () => {
   const { id } = useParams();
   const [car, setCar] = useState(null);
+  const [showAllPhotos, setShowAllPhotos] = useState(false);
 
   useEffect(() => {
     if (!id) {
@@ -30,14 +31,14 @@ const CarPage = () => {
   if (!car) return '';
 
   return (
-    <div className="  bg-gray-100 booking-container pt-5  ">
-      <div className="px-2 py-8 pt-0 mt-10 flex justify-between  ">
-        <h1 className="text-4xl  px-2 font-bold text-shadow text-color2">
+    <div className="bg-gray-100 booking-container pt-5">
+      <div className="px-2 py-8 pt-0 mt-10 flex justify-between">
+        <h1 className="text-2xl lg:text-4xl px-2 font-bold text-shadow text-color2">
           {car.make} {car.model}
-        </h1>{' '}
+        </h1>
         <Link
           to={'/cars'}
-          className=" return-btn background-btn2 flex border border-white text-white"
+          className="return-btn background-btn2 flex border border-white text-white"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -52,85 +53,88 @@ const CarPage = () => {
             />
           </svg>
           Go Back
-        </Link>{' '}
+        </Link>
       </div>
 
-      <Gallery car={car} />
+      <Gallery
+        car={car}
+        setShowAllPhotos={setShowAllPhotos}
+        showAllPhotos={showAllPhotos}
+      />
 
-      <div className="booking-info">
-        <div className="booking-car-details   flex flex-col justify-around bg-white shadow shadow-md  rounded-2xl rounded-r-none min-h-full mr-3 py-2 ">
-          <h1 className="text1 font-bold px-7 mb-2 px-2 text-shadow text-color2">
-            Vehicle Summary
-          </h1>
-          <div
-            data-aos="fade-in"
-            data-aos-duration="1000"
-            className="car-details-container"
-          >
-            <div className="info-box background-btn">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faCar} />
+      {!showAllPhotos && (
+        <div className="booking-info">
+          <div className="booking-car-details flex flex-col justify-around bg-white shadow shadow-md rounded-2xl rounded-r-none min-h-full mr-3 py-2">
+            <h1 className="text1 font-bold px-7 mb-2 px-2 text-shadow text-color2">
+              Vehicle Summary
+            </h1>
+            <div
+              data-aos="fade-in"
+              data-aos-duration="1000"
+              className="car-details-container"
+            >
+              <div className="info-box background-btn">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faCar} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Body :</div>
+                  {car.type}
+                </div>
               </div>
-              <div className="info-text">
-                <div className="info-label">Body :</div>
-                {car.type}
+              <div className="info-box background-btn2">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faGasPump} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Fuel :</div>
+                  {car.specifications.fuelType}
+                </div>
+              </div>
+              <div className="info-box background-btn2">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faDoorOpen} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Doors :</div>
+                  {car.doors} doors
+                </div>
+              </div>
+              <div className="info-box background-btn2">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faChair} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Seats :</div>
+                  {car.seats} seats
+                </div>
+              </div>
+              <div className="info-box background-btn2">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faCogs} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Gear :</div>
+                  {car.specifications.gearBox}
+                </div>
+              </div>
+              <div className="info-box background-btn2">
+                <div className="icon-box">
+                  <FontAwesomeIcon icon={faSnowflake} />
+                </div>
+                <div className="info-text">
+                  <div className="info-label">Aircon :</div>
+                  {car.specifications.aircon ? 'aircon' : ''}
+                </div>
               </div>
             </div>
-            <div className="info-box background-btn2">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faGasPump} />
-              </div>
-              <div className="info-text">
-                <div className="info-label">Fuel :</div>
-                {car.specifications.fuelType}
-              </div>
-            </div>
-
-            <div className="info-box background-btn2">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faDoorOpen} />
-              </div>
-              <div className="info-text">
-                <div className="info-label">Doors :</div>
-                {car.doors} doors
-              </div>
-            </div>
-            <div className="info-box background-btn2">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faChair} />
-              </div>
-              <div className="info-text">
-                <div className="info-label">Seats :</div>
-                {car.seats} seats
-              </div>
-            </div>
-
-            <div className="info-box background-btn2">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faCogs} />
-              </div>
-              <div className="info-text">
-                <div className="info-label">Gear :</div>
-                {car.specifications.gearBox}
-              </div>
-            </div>
-            <div className="info-box background-btn2">
-              <div className="icon-box">
-                <FontAwesomeIcon icon={faSnowflake} />
-              </div>
-              <div className="info-text">
-                <div className="info-label">Aircon :</div>
-                {car.specifications.aircon ? 'aircon' : ''}
-              </div>
-            </div>
+            <h1 className="text2 font-bold text-center mt-2 mb-1 px-2 text-shadow text-color">
+              This {car.make} {car.model} is rented out by {car.owner.name}.
+            </h1>
           </div>
-
-          <h1 className="text2 font-bold text-center mt-2 mb-1 px-2 text-shadow text-color ">
-            This {car.make} {car.model} is rented out by {car.owner.name}.{' '}
-          </h1>
+          <BookingWidget car={car} />
         </div>
-        <BookingWidget car={car} />
-      </div>
+      )}
     </div>
   );
 };

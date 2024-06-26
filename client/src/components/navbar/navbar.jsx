@@ -25,7 +25,7 @@ const Navbar = () => {
     setToHomepage('/');
   }
   return (
-    <div>
+    <div className="w-screen">
       <div className="mobile-nav-wrapper">
         <nav className="mobile">
           <input

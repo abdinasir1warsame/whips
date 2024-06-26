@@ -1,10 +1,11 @@
-import MyCars from "../components/my-cars/myCars"
+import MyCars from '../components/my-cars/myCars';
 
+const CarsPage = () => {
+  return (
+    <div className="w-screen">
+      <MyCars />
+    </div>
+  );
+};
 
-const CarsPage= () => {
-    return (
-    
-   <MyCars/>)
-}
-
-export default CarsPage
+export default CarsPage;

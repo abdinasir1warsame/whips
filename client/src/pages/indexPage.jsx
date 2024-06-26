@@ -11,7 +11,7 @@ import FeaturedCars from '../components/cars-carousel/featured-cars';
 
 const IndexPage = () => {
   return (
-    <div className="max-w-full">
+    <div className=" overflow-x-hidden max-w-screen">
       <Hero />
       <div className="px-5 lg:px-0">
         <FeaturedCars />

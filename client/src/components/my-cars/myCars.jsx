@@ -46,8 +46,8 @@ const MyCars = () => {
           Add new car
         </Link>
       </div>
-      <div className="my-cars-section">
-        <div className="my-cars-container">
+      <div className="my-cars-section ">
+        <div className="my-cars-container ">
           {cars.map((car) => {
             const backgroundImageUrl = getImageUrl(car.photo[0]);
             return (
