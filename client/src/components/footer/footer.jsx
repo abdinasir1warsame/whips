@@ -1,35 +1,39 @@
-import React from "react";
-import footerLogo from "../../assets/nav-images/new-logo2.png";
-import Banner from "../../assets/car-images/footer-bg2.webp";
+import React from 'react';
+import footerLogo from '../../assets/nav-images/new-logo2.png';
+import Banner from '../../assets/car-images/footer-bg2.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import {
+  faFacebook,
+  faYoutube,
+  faInstagram,
+} from '@fortawesome/free-brands-svg-icons';
 import { faPhone, faMapLocation } from '@fortawesome/free-solid-svg-icons';
 
 const BannerImg = {
   backgroundImage: `url(${Banner})`,
-  backgroundPosition: "bottom",
-  backgroundRepeat: "no-repeat",
-  backgroundSize: "cover",
-  height: "100%",
-  width: "100%",
+  backgroundPosition: 'bottom',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+  height: '100%',
+  width: '100%',
 };
 
 const FooterLinks = [
   {
-    title: "Home",
-    link: "/#",
+    title: 'Home',
+    link: '/#',
   },
   {
-    title: "About",
-    link: "/#about",
+    title: 'About',
+    link: '/#about',
   },
   {
-    title: "Contact",
-    link: "/#contact",
+    title: 'Contact',
+    link: '/#contact',
   },
   {
-    title: "Blog",
-    link: "/#blog",
+    title: 'Blog',
+    link: '/#blog',
   },
 ];
 
@@ -41,7 +45,10 @@ const Footer = () => {
 
       {/* Content */}
       <div className="relative z-10">
-        <div data-aos="zoom-in" className="grid  md:grid-cols-3 pb-32 pt-5">
+        <div
+          data-aos="zoom-in"
+          className="grid  md:grid-cols-3 pb-7 lg:pb-32 pt-5"
+        >
           {/* Company details */}
           <div className="py-0 px-8">
             <h1 className="sm:text-3xl text-xl font-bold sm:text-left text-justify mb-3 flex items-center gap-3">
@@ -92,7 +99,7 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div>
+            <div className="flex flex-row text-xs justify-around items-center lg:flex-col lg:justify-start w-screen px-2 lg:w-full  lg:mt-2">
               <div className="flex items-center gap-3 mt-6">
                 <a href="#">
                   <FontAwesomeIcon icon={faInstagram} />
@@ -104,12 +111,12 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faFacebook} />
                 </a>
               </div>
-              <div className="mt-6">
-                <div className="flex items-center gap-3">
+              <div className="mt-6 flex flex-row justify-around lg:flex-col lg:justify-start w-full ">
+                <div className="flex items-center gap-1 lg:gap-3">
                   <FontAwesomeIcon icon={faMapLocation} />
                   <p>Birmingham, United</p>
                 </div>
-                <div className="flex items-center gap-3 mt-3">
+                <div className="flex items-center  gap-1 lg:gap-3  mt-0 lg:mt-3">
                   <FontAwesomeIcon icon={faPhone} />
                   <p>+44 7519551171</p>
                 </div>

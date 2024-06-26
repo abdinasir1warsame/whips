@@ -39,7 +39,7 @@ const Login = () => {
         { withCredentials: true }
       );
       setUser(response.data);
-      alert('Login successful');
+
       setRedirect(true);
     } catch (e) {
       // Handle specific error responses
@@ -66,7 +66,7 @@ const Login = () => {
   return (
     <div>
       <div className="login-container">
-        <div className="log-in-side">
+        <div className="log-in-side hidden lg:inline-flex  ">
           <div className="message-box">
             <h2>Login to Your Account</h2>
             <h3>Explore our Exclusive Rental Services</h3>

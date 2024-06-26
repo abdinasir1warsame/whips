@@ -123,7 +123,7 @@ nav.mobile .m-menu__header {
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: space-around;
-  justify-content: space-around;
+  justify-content: space-between;
   -ms-flex-pack: space-around;
   -webkit-align-items: center;
   align-items: center;
